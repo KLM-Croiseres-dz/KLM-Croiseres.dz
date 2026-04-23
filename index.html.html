@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLM Croisières Méditerranée — L'Algérie vue de la mer</title>
+  <meta name="description" content="KLM Croisières Méditerranée propose des expériences nautiques élégantes au départ de Skikda, pour découvrir la côte Est algérienne autrement, par la mer.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap');
+
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #071E3D;
+      --teal: #1A8FBA;
+      --teal-lt: #C8EBF5;
+      --gold: #B8841E;
+      --gold-lt: #FAF0DC;
+      --sand: #F7F2EA;
+      --white: #FFFFFF;
+      --ink: #1E2D3D;
+      --muted: #6B7A8D;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Lato', 'Segoe UI', 'Tajawal', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.65; }
+
+    /* ── HEADER ── */
+    #page-header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px 56px;
+    }
+
+    /* Illustration SVG en fond du header */
+    .header-illustration {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+    }
+
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,30,61,.3) 0%, rgba(7,30,61,.75) 60%, rgba(7,30,61,.95) 100%);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+    }
+
+    .header-eyelet {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    #page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5.5vw, 64px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    #page-header h1 .ar {
+      display: block;
+      font-size: .55em;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,.5);
+      margin-top: 6px;
+      font-family: var(--sans);
+    }
+
+    #page-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(16px, 2.5vw, 24px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    #page-header h2 .ar {
+      display: block;
+      font-size: .8em;
+      color: rgba(255,255,255,.4);
+      font-style: normal;
+      font-family: var(--sans);
+      margin-top: 4px;
+    }
+
+    .header-gold-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+    }
+
+    /* ── BANDE STATS ── */
+    .stats-band {
+      background: var(--teal);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      padding: 20px 32px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-n { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-l { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-top: 4px; }
+
+    /* ── SECTIONS ── */
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 64px 0 52px; }
+    section + section { border-top: 1px solid rgba(7,30,61,.08); }
+
+    .sec-eyelet { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .sec-h2 { font-family: var(--serif); font-size: clamp(24px, 3.5vw, 38px); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
+    .sec-lead { font-size: 16px; color: #3A4A5C; line-height: 1.8; max-width: 700px; margin-bottom: 36px; }
+    .sec-lead strong { color: var(--navy); }
+    .arabic-note { font-size: 14px; color: var(--muted); margin-top: 10px; direction: rtl; text-align: right; font-style: italic; }
+
+    /* ── INTRO ── */
+    #introduction { background: var(--white); text-align: center; }
+    #introduction .sec-lead { margin: 0 auto 28px; }
+
+    /* ── ILLUSTRATION CÔTE ── */
+    .coast-illustration {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 48px rgba(7,30,61,.12);
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--sand); }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .service-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(7,30,61,.07);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(7,30,61,.12); transform: translateY(-3px); }
+    .service-head { height: 90px; display: flex; align-items: flex-end; padding: 14px 18px; position: relative; }
+    .service-icon { position: absolute; top: 14px; right: 16px; font-size: 26px; }
+    .service-cat {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px; background: rgba(255,255,255,.22); color: var(--white);
+    }
+    .service-body { padding: 16px 18px 20px; }
+    .service-name { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .service-text { font-size: 13.5px; color: #4A5A6E; line-height: 1.65; }
+    .service-ar { font-size: 12px; color: var(--muted); margin-top: 6px; direction: rtl; text-align: right; }
+
+    /* ── TERRITOIRE CÔTE EST ── */
+    #territoire { background: var(--white); }
+    .coast-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .coast-card {
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(7,30,61,.08);
+    }
+    .coast-head { height: 100px; position: relative; }
+    .coast-body { padding: 14px 16px 18px; }
+    .coast-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .coast-text { font-size: 12.5px; color: #4A5A6E; line-height: 1.6; }
+    .coast-badge {
+      position: absolute; top: 10px; left: 10px;
+      font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 100px; background: rgba(255,255,255,.25); color: var(--white);
+    }
+
+    /* ── CONFIANCE ── */
+    #confidence { background: var(--sand); }
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .trust-item {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 20px;
+      border: 1px solid rgba(7,30,61,.07);
+      text-align: center;
+    }
+    .trust-icon { font-size: 30px; margin-bottom: 10px; }
+    .trust-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .trust-text { font-size: 13px; color: #4A5A6E; line-height: 1.6; }
+
+    /* ── ITINÉRAIRES ── */
+    #itineraires { background: var(--white); }
+    .iti-list { display: flex; flex-direction: column; gap: 16px; }
+    .iti-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: var(--sand);
+      border-radius: 12px;
+      border: 1px solid rgba(7,30,61,.07);
+      transition: box-shadow .2s;
+    }
+    .iti-item:hover { box-shadow: 0 4px 20px rgba(7,30,61,.1); }
+    .iti-code {
+      width: 70px; height: 70px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px; color: var(--white);
+      flex-shrink: 0;
+    }
+    .iti-info {}
+    .iti-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .iti-stops { font-size: 13px; color: var(--muted); }
+    .iti-price {
+      text-align: right; flex-shrink: 0;
+      font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--teal);
+    }
+    .iti-duration { font-size: 11px; color: var(--muted); text-align: right; margin-top: 2px; }
+
+    /* ── CTA RÉSERVATION ── */
+    #cta {
+      background: var(--navy);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .cta-eyelet { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .cta-h3 { font-family: var(--serif); font-size: clamp(24px, 4vw, 42px); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
+    .cta-sub { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 48px; font-style: italic; font-family: var(--serif); }
+    .cta-gold-line { width: 50px; height: 1px; background: var(--gold); margin: 20px auto 40px; }
+
+    .contact-cards { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .contact-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: center;
+      min-width: 160px;
+      transition: background .2s, border-color .2s, transform .2s;
+      text-decoration: none;
+      display: block;
+    }
+    .contact-card:hover {
+      background: rgba(26,143,186,.2);
+      border-color: rgba(26,143,186,.5);
+      transform: translateY(-4px);
+    }
+    .contact-card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .contact-card-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .contact-card-value { font-size: 15px; font-weight: 700; color: var(--white); }
+    .contact-card-sub { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 3px; }
+
+    .cta-note { font-size: 13px; color: rgba(255,255,255,.35); margin-top: 24px; }
+
+    /* Bouton formulaire */
+    .cta-form-btn {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .04em;
+      padding: 14px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      margin-top: 16px;
+    }
+    .cta-form-btn:hover { background: #15738F; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    #page-footer {
+      background: #04111E;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .footer-slogan { font-size: 13px; font-style: italic; color: var(--teal); margin-bottom: 16px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 11.5px; color: rgba(255,255,255,.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .services-grid, .coast-grid, .trust-grid { grid-template-columns: 1fr; }
+      .iti-item { grid-template-columns: 60px 1fr; }
+      .iti-price { display: none; }
+      .contact-cards { gap: 10px; }
+      .stat-item { padding: 14px 18px; }
+    }
+    @media (max-width: 500px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .coast-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER avec illustration SVG côte algérienne ══ -->
+<header id="page-header">
+
+  <!-- Illustration SVG : paysage côtier algérien (falaises, mer, soleil couchant) -->
+  <svg class="header-illustration" viewBox="0 0 1440 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <!-- Ciel dégradé -->
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a1a2e"/>
+        <stop offset="40%" stop-color="#1a3a5c"/>
+        <stop offset="100%" stop-color="#0d3558"/>
+      </linearGradient>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1a6a9a"/>
+        <stop offset="100%" stop-color="#0a3050"/>
+      </linearGradient>
+      <linearGradient id="sunGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#FFB030" stop-opacity=".7"/>
+        <stop offset="100%" stop-color="#FFB030" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="sunGlowRad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFB030" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#FFB030" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Fond ciel -->
+    <rect width="1440" height="520" fill="url(#skyGrad)"/>
+
+    <!-- Halo solaire -->
+    <ellipse cx="1150" cy="200" rx="220" ry="160" fill="url(#sunGlowRad)"/>
+    <!-- Soleil -->
+    <circle cx="1150" cy="200" r="52" fill="#FFB030" opacity=".85"/>
+    <circle cx="1150" cy="200" r="38" fill="#FFD060" opacity=".9"/>
+
+    <!-- Reflet soleil sur mer -->
+    <ellipse cx="1150" cy="340" rx="120" ry="12" fill="#FFB030" opacity=".22"/>
+    <rect x="1090" y="320" width="120" height="60" rx="2"
+          fill="url(#seaGrad)" opacity=".4"
+          style="mask: url(#waveMask)"/>
+
+    <!-- Mer -->
+    <path d="M0 310 Q180 280 360 305 Q540 328 720 295 Q900 262 1080 290 Q1260 318 1440 285 L1440 520 L0 520Z"
+          fill="url(#seaGrad)"/>
+    <!-- Vagues surface -->
+    <path d="M0 320 Q120 308 240 318 Q360 328 480 312 Q600 296 720 310 Q840 324 960 308 Q1080 292 1200 305 Q1320 318 1440 295"
+          fill="none" stroke="rgba(100,200,240,.25)" stroke-width="1.5"/>
+    <path d="M0 335 Q150 322 300 334 Q450 346 600 328 Q750 310 900 326 Q1050 342 1200 322 Q1320 308 1440 318"
+          fill="none" stroke="rgba(100,200,240,.15)" stroke-width="1"/>
+
+    <!-- Falaises gauche (massif de Collo avec végétation) -->
+    <path d="M0 520 L0 260 Q30 220 60 240 Q90 215 120 235 Q155 205 190 225 Q225 195 260 218 Q295 188 330 210 Q365 180 400 205 L420 310 Q380 295 340 310 Q300 325 260 308 Q220 291 180 310 Q140 329 100 315 Q60 301 0 320 Z"
+          fill="#1a4a2a"/>
+    <!-- Ombre falaise gauche -->
+    <path d="M0 520 L0 290 Q50 270 100 280 L80 310 Q40 305 0 320 Z" fill="#0e2e18"/>
+    <!-- Pins sur falaise gauche -->
+    <polygon points="80,240 72,270 88,270" fill="#0d3520"/>
+    <polygon points="120,218 110,252 130,252" fill="#0d3520"/>
+    <polygon points="165,210 155,245 175,245" fill="#0d3520"/>
+    <polygon points="210,200 200,238 220,238" fill="#0d3520"/>
+    <polygon points="255,192 244,228 266,228" fill="#0d3520"/>
+
+    <!-- Montagne / relief central -->
+    <path d="M350 310 Q400 200 460 225 Q510 175 570 210 Q620 165 680 195 Q730 155 790 188 Q840 145 900 180 L920 310 Z"
+          fill="#153828"/>
+    <path d="M680 195 Q730 155 790 188 Q840 145 900 180 L890 310 L700 310 Z" fill="#102a1e"/>
+
+    <!-- Falaises droite -->
+    <path d="M1440 520 L1440 255 Q1400 225 1365 248 Q1330 218 1295 240 Q1260 208 1225 232 Q1190 198 1155 225 L1140 310 Q1190 295 1240 310 Q1290 325 1340 310 Q1390 295 1440 310 Z"
+          fill="#1a4a2a"/>
+    <!-- Pins droite -->
+    <polygon points="1360,238 1350,272 1370,272" fill="#0d3520"/>
+    <polygon points="1315,228 1305,262 1325,262" fill="#0d3520"/>
+    <polygon points="1270,218 1260,252 1280,252" fill="#0d3520"/>
+
+    <!-- Plage de sable au centre -->
+    <path d="M380 505 Q720 455 1060 505 L1440 520 L0 520 Z" fill="#c8a870" opacity=".5"/>
+
+    <!-- Yacht électrique silhouette -->
+    <g transform="translate(660, 285)">
+      <!-- Coque -->
+      <path d="M0 22 Q60 18 120 22 Q130 26 120 30 Q60 32 0 30 Z" fill="#f0f0ee" stroke="#ccccca" stroke-width=".6"/>
+      <!-- Superstructure -->
+      <rect x="20" y="12" width="72" height="12" rx="2" fill="#ebebea" stroke="#b8b8b4" stroke-width=".5"/>
+      <rect x="32" y="6" width="34" height="8" rx="1.5" fill="#e4e4e2"/>
+      <!-- Mât -->
+      <line x1="60" y1="-18" x2="60" y2="6" stroke="#8a8a88" stroke-width="1.2"/>
+      <!-- Voile principale -->
+      <path d="M60 -18 L36 6" fill="rgba(255,255,255,.8)"/>
+      <!-- Voile avant -->
+      <path d="M60 -18 L82 6" fill="rgba(255,255,255,.55)"/>
+      <!-- Panneaux solaires -->
+      <rect x="24" y="13" width="28" height="5" rx="1" fill="rgba(30,80,200,.4)" stroke="rgba(30,80,200,.6)" stroke-width=".5"/>
+      <!-- Reflet sur l'eau -->
+      <ellipse cx="60" cy="36" rx="55" ry="5" fill="rgba(240,240,238,.12)"/>
+    </g>
+
+    <!-- Étoiles discrètes dans le ciel -->
+    <circle cx="200" cy="80" r="1" fill="rgba(255,255,255,.6)"/>
+    <circle cx="350" cy="55" r="1.2" fill="rgba(255,255,255,.5)"/>
+    <circle cx="520" cy="70" r="1" fill="rgba(255,255,255,.4)"/>
+    <circle cx="680" cy="45" r="1.5" fill="rgba(255,255,255,.6)"/>
+    <circle cx="820" cy="65" r="1" fill="rgba(255,255,255,.4)"/>
+    <circle cx="950" cy="50" r="1.2" fill="rgba(255,255,255,.5)"/>
+  </svg>
+
+  <div class="header-overlay"></div>
+
+  <div class="header-content">
+    <div class="header-eyelet">Skikda · Algérie · Méditerranée</div>
+    <h1>
+      KLM Croisières Méditerranée
+      <span class="ar">رحلات ك.لا.م للرحلات البحرية في البحر المتوسط</span>
+    </h1>
+    <h2>
+      L'Algérie vue de la mer.
+      <span class="ar">الجزائر كما لم تشاهدها من قبل — من البحر.</span>
+    </h2>
+    <div class="header-gold-line"></div>
+  </div>
+</header>
+
+<!-- ══ BANDE STATS ══ -->
+<div class="stats-band">
+  <div class="stat-item">
+    <div class="stat-n">140 km</div>
+    <div class="stat-l">de côtes à Skikda</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">3 000 ans</div>
+    <div class="stat-l">d'histoire maritime</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">4 sites</div>
+    <div class="stat-l">UNESCO sur la route</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">100%</div>
+    <div class="stat-l">énergie propre à bord</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">1er</div>
+    <div class="stat-l">opérateur nautique Algérie Est</div>
+  </div>
+</div>
+
+<!-- ══ INTRODUCTION ══ -->
+<section id="introduction">
+  <div class="wrap">
+    <div class="sec-eyelet">Notre promesse</div>
+    <div class="sec-h2" style="text-align:center">
+      Évadez-vous autrement, par la mer.
+    </div>
+
+    <!-- Illustration côte algérienne -->
+    <div class="coast-illustration">
+      <img src="https://raw.githubusercontent.com/KLM-Croiseres-dz/KLM-Croiseres.dz/main/Plage%20de%20Skikda_Yacht.jpeg"
+           alt="Crique méditerranéenne de Skikda avec yacht KLM Croisières — photo réelle"
+           style="width:100%;height:auto;display:block;border-radius:16px;
+                  box-shadow:0 12px 48px rgba(7,30,61,.15);
+                  object-fit:cover;max-height:420px">
+    </div>
+
+    <p class="sec-lead">
+      KLM Croisières Méditerranée propose des <strong>expériences nautiques élégantes et mémorables</strong> au départ de Skikda et du littoral algérien. Nos sorties en mer, sunset cruises et mini-croisières sont conçues pour redonner goût à la simplicité — profiter de l'air marin, se laisser bercer par le bruit de l'eau, redécouvrir l'Algérie autrement.
+    </p>
+    <p class="sec-lead">
+      À bord de yachts modernes, silencieux et propulsés par des <strong>énergies renouvelables</strong> (projet Sea Expandary), chaque sortie est une parenthèse de calme, de détente et d'authenticité — entre le standard et le haut de gamme, accessible à toute la famille.
+    </p>
+    <p class="arabic-note">تقدم رحلات ك.لا.م للرحلات البحرية في البحر المتوسط تجارب بحرية راقية من سكيكدة. زوارق هادئة وصديقة للبيئة، تجربة أصيلة على ساحل جزائري لا مثيل له.</p>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-eyelet">Nos formules</div>
+    <div class="sec-h2">Des expériences pour chaque envie.</div>
+    <p class="sec-lead">De la balade d'1h30 au coucher du soleil à la mini-croisière de plusieurs jours le long de la côte romaine — KLM Croisières s'adapte à vos envies, à votre famille, à votre groupe.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#0d4060,#1a8fba)">
+          <span class="service-icon">🌅</span>
+          <span class="service-cat">4 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Le Coucher du Cap — Sunset cruise</div>
+          <div class="service-text">Départ 18h, retour 22h. La lumière dorée sur les falaises du Cap de Fer. Apéritif à bord, musique douce, silence de la mer. Pour la première fois, vous voyez Skikda depuis le large.</div>
+          <div class="service-ar">جولة غروب الشمس — من 18:00 إلى 22:00</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#1a4a2e,#2a8050)">
+          <span class="service-icon">🏊</span>
+          <span class="service-cat">8 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Les Criques de Stora — Journée nature</div>
+          <div class="service-text">Stora, Ain Zouit, Baie des Cocos. Des anses vierges accessibles uniquement par la mer. Snorkeling, déjeuner halal à bord, baignade. La vraie Algérie sauvage.</div>
+          <div class="service-ar">جولة يومية — الخلجان البرية الخفية في ستورا وعين زويت</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#2a1a4a,#6040a0)">
+          <span class="service-icon">🌙</span>
+          <span class="service-cat">24 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">La Nuit en Méditerranée</div>
+          <div class="service-text">Ancrage au crépuscule dans une crique isolée. Dîner à bord, nuit sous les étoiles en mer Méditerranée, petit-déjeuner face à l'horizon. Une vie pour s'en souvenir.</div>
+          <div class="service-ar">ليلة في البحر المتوسط — مرساة في خليج وحيد تحت النجوم</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#3a0e0e,#903030)">
+          <span class="service-icon">🏛️</span>
+          <span class="service-cat">5 jours</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">La Côte Romaine ★ UNESCO</div>
+          <div class="service-text">Skikda → Annaba (Hippone, Saint Augustin) → Jijel → Béjaïa → Alger → Tipaza UNESCO. La grande croisière de la Méditerranée algérienne. Cabines, repas halal, excursions inclus.</div>
+          <div class="service-ar">رحلة الساحل الروماني — من سكيكدة إلى تيبازة اليونسكو</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#0e2a3a,#1a5a7a)">
+          <span class="service-icon">👨‍👩‍👧‍👦</span>
+          <span class="service-cat">Famille</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Mini-croisière familiale</div>
+          <div class="service-text">Sorties de demi-journée pensées pour les familles qui veulent quitter la ville, profiter du temps ensemble et offrir aux enfants une sortie différente. Accessible, confortable, halal.</div>
+          <div class="service-ar">رحلة عائلية — نصف يوم مع العائلة على البحر الجميل</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#1a3a0e,#4a8020)">
+          <span class="service-icon">🏢</span>
+          <span class="service-cat">Corporate</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Privatisation & Événements</div>
+          <div class="service-text">Anniversaire, mariage, séminaire de direction. Le yacht entier privatisé pour votre groupe (6 à 12 personnes). Traiteur halal sur demande. Un événement que personne n'oublie.</div>
+          <div class="service-ar">تأجير اليخت — حفلات، ذكرى سنوية، تكوين الفرق المهنية</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TERRITOIRE CÔTE EST ══ -->
+<section id="territoire">
+  <div class="wrap">
+    <div class="sec-eyelet">Le territoire</div>
+    <div class="sec-h2">De Tipaza à la frontière tunisienne —<br>la Méditerranée telle qu'elle était.</div>
+    <p class="sec-lead">La côte Est algérienne est l'une des façades maritimes les plus préservées du bassin méditerranéen. Criques vierges, grottes marines, ruines antiques en bord d'eau, dauphins et posidonie — tout cela n'existe que pour celui qui arrive <strong>par la mer</strong>.</p>
+
+    <div class="coast-grid">
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#071e3d,#1a6a9a)">
+          <span class="coast-badge">Skikda · Base KLM</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <path d="M0 100 L0 40 Q30 20 60 35 Q90 12 120 30 Q150 8 180 28 Q200 18 220 30 L220 100Z" fill="rgba(26,106,50,.7)"/>
+            <path d="M0 100 Q55 70 110 82 Q165 94 220 68 L220 100Z" fill="rgba(26,143,186,.5)"/>
+            <ellipse cx="130" cy="78" rx="18" ry="3" fill="rgba(255,255,255,.2)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Skikda · Stora · Tamanar</div>
+          <div class="coast-text">140 km de côtes. La plage de Tamanar — 700 m de sable vierge entre des falaises de 200 m. Les criques de Stora, Ain Zouit, Cap Bougaroun. La Perle de l'Est.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#0e3a20,#2a7a50)">
+          <span class="coast-badge">Béjaïa · Jijel</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <path d="M0 100 L0 35 Q40 10 80 28 Q115 5 150 22 Q185 0 220 18 L220 100Z" fill="rgba(10,40,20,.6)"/>
+            <path d="M0 100 Q55 72 110 85 Q165 98 220 65 L220 100Z" fill="rgba(60,180,100,.3)"/>
+            <circle cx="160" cy="32" r="8" fill="rgba(255,180,30,.5)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Parc Gouraya · Grottes de Jijel</div>
+          <div class="coast-text">4 espèces de mammifères marins protégés (dauphins, cachalots). Grottes marines ocre de Jijel. Herbiers de posidonie. Réserve de biosphère UNESCO 2014.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#2a1a0a,#8a5020)">
+          <span class="coast-badge">Annaba · Hippone</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <!-- Colonnes romaines stylisées -->
+            <rect x="40" y="20" width="6" height="55" rx="1" fill="rgba(220,180,80,.7)"/>
+            <rect x="40" y="18" width="10" height="5" rx="1" fill="rgba(200,160,60,.8)"/>
+            <rect x="70" y="12" width="6" height="63" rx="1" fill="rgba(220,180,80,.7)"/>
+            <rect x="70" y="10" width="10" height="5" rx="1" fill="rgba(200,160,60,.8)"/>
+            <rect x="100" y="18" width="6" height="57" rx="1" fill="rgba(200,160,60,.6)"/>
+            <rect x="100" y="16" width="10" height="5" rx="1" fill="rgba(180,140,50,.7)"/>
+            <path d="M30 75 L130 75" stroke="rgba(200,160,60,.5)" stroke-width="2"/>
+            <path d="M0 100 Q55 80 110 90 Q165 100 220 75 L220 100Z" fill="rgba(26,143,186,.4)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Hippone · Monts Edough</div>
+          <div class="coast-text">Forum romain parmi les plus grands d'Afrique du Nord. Basilique Saint-Augustin. Les monts Edough (70 km) en cours de classement réserve naturelle.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#1a0a2a,#4a2080)">
+          <span class="coast-badge">Tipaza · UNESCO</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <rect x="30" y="25" width="5" height="50" rx="1" fill="rgba(200,180,255,.6)"/>
+            <rect x="50" y="15" width="5" height="60" rx="1" fill="rgba(200,180,255,.6)"/>
+            <rect x="70" y="20" width="5" height="55" rx="1" fill="rgba(200,180,255,.5)"/>
+            <path d="M80 22 Q90 12 100 22" fill="none" stroke="rgba(200,180,255,.5)" stroke-width="2"/>
+            <rect x="80" y="22" width="3" height="53" rx="1" fill="rgba(200,180,255,.5)"/>
+            <rect x="97" y="22" width="3" height="53" rx="1" fill="rgba(200,180,255,.5)"/>
+            <path d="M0 100 Q55 68 110 82 Q165 96 220 62 L220 100Z" fill="rgba(26,143,186,.5)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Tipaza · Site UNESCO</div>
+          <div class="coast-text">Colonnes romaines qui trempent dans la Méditerranée depuis 2 000 ans. Comptoir punique du Ve s. av. J.-C. Basilique, forum, amphithéâtre en bord de mer.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#0a2a20,#1a6a50)">
+          <span class="coast-badge">El Kala · UNESCO</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <!-- Oiseaux et lagune -->
+            <path d="M60 35 Q67 30 74 35" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M100 25 Q107 20 114 25" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M140 38 Q147 33 154 38" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M0 100 L0 55 Q55 40 110 55 Q165 70 220 45 L220 100Z" fill="rgba(30,100,70,.6)"/>
+            <path d="M0 100 Q55 78 110 88 Q165 98 220 72 L220 100Z" fill="rgba(20,160,100,.3)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">El Kala · Réserve biosphère</div>
+          <div class="coast-text">76 000 ha de lagunes, dunes et forêts. Réserve de biosphère UNESCO. Sanctuaire ornithologique unique en Algérie. Frontière tunisienne.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#1a1a0a,#6a5a20)">
+          <span class="coast-badge">Gastronomie</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <circle cx="110" cy="45" r="25" fill="rgba(255,200,80,.2)" stroke="rgba(255,200,80,.4)" stroke-width="1.5"/>
+            <path d="M98 45 Q110 38 122 45 Q116 50 110 52 Q104 50 98 45Z" fill="rgba(255,200,80,.6)"/>
+            <path d="M0 100 Q55 72 110 85 Q165 98 220 68 L220 100Z" fill="rgba(26,143,186,.4)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Cuisine de la mer · Halal</div>
+          <div class="coast-text">Couscous de poisson avec les prises du matin, oursins, langouste de Collo, sardines grillées. Repas préparé à bord avec les produits frais de la mer locale.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONFIANCE & SÉCURITÉ ══ -->
+
+<!-- ══ GÉRANT FONDATEUR ══ -->
+<section id="gerant" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-eyelet">À propos du fondateur</div>
+    <div class="sec-h2">M. Lahouel Kémal Mabrouk<br><span style="font-size:.6em;font-weight:400;color:var(--teal);font-style:italic">Gérant fondateur · SARL KLM Croisières Méditerranée</span></div>
+    <p class="sec-lead">Entrepreneur algérien passionné par la mer et le développement durable, M. Lahouel Kémal Mabrouk fonde KLM Croisières avec une vision claire : révéler la Méditerranée algérienne depuis la mer, pour tous ceux qui ne l'ont jamais vue. Fort d'un réseau personnel ancré dans la région de Skikda et d'un partenariat stratégique avec Sea Expandary (Shenzhen), il construit le premier opérateur de mini-croisières durables de la côte Est algérienne.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:680px">
+
+      <div style="text-align:center">
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(7,30,61,.15);border:3px solid rgba(26,143,186,.2)">
+          <img src="data:image/jpeg;base64,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"
+               alt="M. Lahouel Kémal Mabrouk — Gérant fondateur KLM Croisières"
+               style="width:100%;height:auto;display:block">
+        </div>
+        <div style="margin-top:12px;font-family:var(--serif);font-size:14px;font-weight:700;color:var(--navy)">Gérant fondateur</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">SARL KLM Croisières Méditerranée</div>
+      </div>
+
+      <div style="text-align:center">
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(7,30,61,.15);border:3px solid rgba(184,132,30,.2)">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCAGrAUADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDyIGlpmafVEiilBPSmg06gBw4HAFOzUYNP6DigBRmnA469aaDSg96aAfSj0pm4e9OB70wHDpRTQeKXNKwC0UmRRmnYBaKKKRLYUUUUiQoopuc07AOooopgFJnig0h4oACeOlIfrRzSUAKTSE0maSgBe9ITzRRQAUUmcUmceuaAFJoBFNzzzTScdKaAeaTpTSxzRkY70yh6nmlzzTAeeOlHWgTJA3PWlz7VEGANO3gnHrSsKxXHWnA0wH2p2ag0H0Z5pAaWgBRTsimUtMCQHdS0zNOHvTAdmlB5pvejNAElGc02jNADh/Wg5poOKXI60AO6Ud+abkUtAmhc0maCfWkyKCBfrRRmkzzxQA7NIcUhPFHbk0ALRSZpD7UAFITxRk0lAB3opCaTNAC5oLUzjtRQApOaQmkJpKAFzzSUUUAFFHekJ5p3HcXdRuPWo+hpRTGx/ej8aTNAPFSSRA4pQeaSgVJoPB7ClpoOKXNNAOH60v400Gl6imA7PvTgcimUZoAk70oNMB/CgGgCXPFBNNzxS54oAKXNIKKAFzRnt0pKKAHZ96KbS59qBWFo5pM0ZwaAsLketGR0ptFArC5pM0u1v7rflS+XIf8Alm35UCY2ineXL2jY/hSeTLnGw/mKBDD1pDTzFJ1wP++h/jSeU/fb+LD/ABoAYKXqPSjy2/vIP+BCk2EdXQf8CoAQ0lO2c8yJ+v8AhSFBn/Wr+RoASil2p3l/8dNG1P8Anof++f8A69ADSaSnbUz99/8Avkf40Yj9X/SgBvainfJ/t/pR+79H/wC+v/rUANopR5YP3G/76oymfufmxoAiHpRg0dqKSNA5DYp4HuKZQOtMB4HNOH1plO7UAO/GlGPX9KaDSjpQA4qMcE0ox600GjI9KAHjHvS5XHRvzqPNLmgB+QOg/Wl3DGcD86Zn2oBGOlAEm4d1FLuGfuiowwxSk8UAPD/7K/lS+YR0Cj8BUeaTPvQBN5reo/IUhd/X9KjBpaAHb2/vGjzJMcO350zIppbFADy7ZwWb86NxJ6mmbqOhoAfnApBz1HFJuppfNAmh/AHSkOO1N3UhJNBNhc0nGc0maTNAJAaOTSbsUmeOKBCkntSBjmkooAdk0meabmjNAC5NGeM03NFADt1GeM02igBo60uRTciloNB1FIDS0AKDS7qbRQBJmimA0oNAD80ZFNyKAaAHg4FFJn1pN1ADqKbu96NwoAfuNLuGPemAg0ufegBwPpSg9aZmgGgB+aAaZnNG6gBxNITxSbh7UhPpQAtJnmkz60hNAD/pScim7uOtIW4oAfmjPGahJxTgxxigB5o7U3cT3oyaBaikUEUmT604GgVmM2nvRt+tSgmkyaBWI9tGD6VId2KYdxoCw2ijFIfpQFhaM0zmjNAWEpRTe9OzQWKOKdmmg0UAOopB1paAClzxSUUAKDS596bRQA4mkzSUUAOoptGTQA6ikyaTJoAeDRuxTM4ozyM0AODUu6mUUAOzRnim5ooAXdQTSUmRmgBaKKKAEPWkopM+tAD6KbmgGkwH5pw6VHkU4HA60XAkzS1GDTt1FwHU2jPvSZFFwA0w9aUmkJouAhxTDilJpuaYAKWm0tADh1paZnnmloAcOtL3popaAHUU3PaigB1FNzS5oAWikz3oyKAFziikJ9KSgB1FJk+lJQA6kyKQmmk0APzRmo80Z9qAH5NIGyOaQBvLMm0lAcEjnH19KjjYz3ot7dfNY9cZ4+vFAEuRSE81Tv57zTLgfbdMmS3P/LcEEH6DvU0U8M0CzQyK6MMhlPBoAmzil3j3qLfxRuoAk3UmaYGGOTRuoAk3UmabmgmgB4YU7NRZFLmgCYGjJqIGl3UrASZNBNR7qC3pRYB5NNJ70wnijtRYBcmm5ozTScGmhj6KBRQIXilzTaXmgBaXOBTeaDQAucmim0uaAFopM+1LQAUuaToKbzQA7OaM0maSgB2aTNJTGkUSpHuG9zhV/vGgB5NBYIuTjPqe1WxZ2RUh9Wi3j+6p2k+gY8E/StiDQ7a3lWJQ1xMI/PluHwiwp/DgNnLHnH/16TZSi2c6qlo/MOSnTgZzVrSrZb+a7nHkrBaJhklY5lkPARffPJ54Arp2itdY08Wc1uGjkDOkhf8AekJwSSMYGe/T61yd7oE+laj55LC1YMotdweR8jOSq4wccZ96ly7FqFjMn0jxBILhrS/iRlUs0cajhT0Ct3z2z+tUNEutTt7aEQXEdrExYtb20CnB77mYbiO/P0rfu70waY1pp2l+RNJF8sKlpWAJwMgdCOOOMdTUNxoOsPcSX7W1xaRSOQZEiACKRyFycnP0qdWWlZFE6hLcW91ZSXTNE6ljhgQGBHzjPQ7se3aq9mtzDrAhHKSxFsIuAGU84HY/z4qrcwJpsM32eRj529QtyQWcDA3bf4c9evYd6s6BOl/46laNG+xxRKizE8H5Rlvx5oTE4kjas5tyjxyPdOcBXYqxHXCt0AII9hU8d4YbhBfK8EbD5WxvO7upxxnj6V0J8PWrQr9jthI4Rdu88IAPvEnr39jxzWB4igEslrADajBySW+5jDM5Hvj8eccCnzMXIh0T3VxEJ4rQrCSfndugHOeO3uRip7aOS8cJbr5p6/uzuGPXNQI/k6ZuhiLozE/Zgu0zKFG3J6gcE46cetZy6nr01u0KXTiOeQ+YsYwq44C+uP8APempMnkOhudPvbElbq2kjxjlhxz71U3jOM1zGpzal89vJcSZi/1YMpJ+uM8A+lOstZuBErXG2aBukkY/eL2ww6HB/H601ITh2Ol3Uu45qra3UFzGrQzLJkZJWrNUQO3UbqbRQA7dRuptFADt1Lnmmc0vNACk0UD6UuM807AKDSg5qIc8rk0qv6UgJaXJpgNOoAXtSUUd6ACiiigBe/Wj8aSigBfxpKTNLnFABRSZNNLUADPjACliegUZJ+g71XuNF1EXj3E+nzskZ2btxjZOcgsp7fp60Xd9LaWk4gljj2qDLIATJ1GFHHFdJ4QuPta+VezXEnnuqRQXDE7lbAGQenOenb6VMuxcV1MqDTiLB72aRnXLOsCDa6FeSgHQ+xHr0q/pGr393Z3L37ASoVaVOTlm4X8FXCj65roNV06xt7GSwhVirBhFMigKNn3X49OB+VUnsbMSQ38EKlriLzFYH7zBfnyfc568Z9KhmqRphxZ28UUMPm3t3FxEn8GOEJP0DcerGse7N3vSUXUhuHG+S4jwWEYBJA9OOw9RnrVu1jl/tGLUlHC2ywpnkrjdzj0+Yj8qht7GaS+aHfkYVWJOMqvfPp8o+uKzdRI2jSbFBttOkiWzUC7Rd4z83lZwfxOCMDOMkZ4qlfakjxN9qZrq9bJJmkY+UhB4ABHXB546e9ab2CXLSzk7pElQyHOMrtwDjpjgfjSWegXd49z5Nv5kkzBJTgYU56r64yfYZqHXSNFh2cFcWEV5513c25gj3AiMEvuJGFXrz2J/H2ra0HTdK0/zDdxzXUkXLRx4VIx7nKjHbr+HetpPBt9aajCok8xkIfcCCQO3HbuT/Ot2z0VrZpGkndjgZBUMBz3B4znuaSrIp0DC1a5s7+3/ANCkuraMnaUjO6MkDGfXvjOTXIXENhBZytFh2UFWkkULsHcquSWJwBnOe1elXOiapeCWGPVLi1gfMbLGoIAHT0A/zxXOT/D3SopGuZ7qa4kyPmaVYxnPQnAIH40e1TejF7Bpao43wxcedqMkbGRrGU7cNkEkHsSeOp4rR1CaCPxDKmn3AwzgxwlVKnp8uQeO3XAroVjhSwbT9N0eJhGCNyyRgJk9STlj+dc9e6NcQTH9y0YZT8xQkk7eoHpyatVEZSpM5y8smvIgI43V1cCVWJGWI/zz+VA0m+FxLbWUcqBphllXhWxyAM9u/vWhba2tjfvMpVpS2QQMKuBjqep6fTFbttrUI0SCytUimvJCpIAZiUJwe27sCTxnn1rVK5i1Y4Ob+2NF1wxvdGfa5QoQAMDHU9emK6u1uzd2yuV2bfl2D+H1/XvWpq2mLfxB5II7eCRRI8srcgAnAOM4JOOuMDFc0txc2920ckRjZnwYlIO1R0+n5571SdjOSvqbFFIvmtHv2Nt9euKAc1ZmLRRk4pcnGM0AOwaTBzRvOOvNJuPrQA7mgZpu40uT61QE8kKuSeVb+8KrujIfmGP9odKvHpTSvHTIPrUXApZx16U7dxUjwY5j/wC+T0qAggkYIP8AdNMbJN2e1LUQYHjvTgaBD+9LkUzNLmgB2aM03NNyKAsx2aQtik4pDxQOwrNTQGeRUT7zHApjNWlpMUZjmuZFDFQqxrycsXUH9GPNA0iSy0dLiSSG5AaGeQCH5RmVgw/TPU/WtjT9NtrHUrvVIG2bIXG0rlm2sq7h7lm69gMdKrQ6nv18zsxj8t/LQbQdi46fqD+FMtb1pL9rSSTaGLR564DHp9MjP/6qzk7G0Y30LtxdSSWU1vvYyvHJGmD9zccAc9DxV+x0u8XSrOCaMLJCSFGOQO+ffn+dW9H8ITT3RWdGimf58HJXII79xx/OvUbDw4DbrK65dR5WCRnkckdu2fxry8RjVDQ9jC4BzszgH0GWwsonFuzFXO5Sc7kIyPrxmr9tokrWu/asnm/MrkDOOR19uPxrvX0+MyW4Mf7pSCcjkDkfngipUsvIkNvbxx4zn95javY8D/Oa8yeNbPZp5bbocBa6C7pFILcSLIpQ8EfVcDuelbel+HU03yRJGJsZXCsRwTkD6+/tXZWOn26+YzWq4U5CoeGPUtWotlCEVRGMEdTzj2HpWf1voa/2ekclp2hQyyNeyWwO1uN2AWYZwT7DgD8TVmTw7b26+Z5TMSxJjx07845rpGjZdwhVQrkH5eMH+vPNRSQhpQWLBjzx1Pvn1qXiWylgkuhwuo6PI0g2xqqr0EjYA9TjrXI33hucvJLOTLJnKqU4UE9QOn+Feq31v5g+U4A4IHUisO709XjcFGHGSoYkMPenHFNClgk9zy680WF3EbR+cANrOQCCfp6VjXWjW3+p8uRSM5A4yP6V6ZLaxRxNEIyGbpxt/CsW4sxtZ8h2U4YHrWscQzCWFjax5ZeW97pOZLVTKnOIWjVgR6HcCAPfBqhDdxaleeVfxyWLn5pLhGK8DoDgYOc8dK7++iRPMIRXjfqrDg/T0rk77TFFsVs4XLBg4DfOxxzjsK9TDYq6szxcXg7aouxWsBfZZSz3EAQB2CBY89ONxB4wMnmuc12EWLb4IVkRlZTLGMsQOyg9DnPX2q1pg1ESmW5RHQPgRuSm0deeB/Pk0t4tzcNKl7FZSWmNyCFwpLdAAfy69MV6Sd0eS42OBfxPPp8uIYyYsgqJmJIH5/yrpNK12z1JhGrqs+Mlex+h71lappFjBaOLyQElSxWFRnHULkkdPUVk2FmsMiXNpDcKqc4GCUz05zimrmbVz0LAIyKQ+9RaTcS3linmxGOZQN+7jr0z6VZkglT76FfxBrRGZCTikDAnrTG69aTPNOwE24Ac0uc81D9aeCNtMDToptKOe9RYAIqN41cYYZqT8aQ0xlN4WTkfMPXvTAeau44qJ4VY5A2n1FAEGaXNDBlOGH49qTPNAx1NoooAKaxoY0wmi4AcEgHpmtHR5lxJGcgEZz15yMDH4Csxvu0wXS2okjYfPgbsdR6EDvzikxrc6O+imnaSeyYA8IpAxlhy27HrjP1xW54asPN1OJtS08zMCB5oxu3Ackkc45PP51haUst9JF5JVZZmUCOSLdz2I5zwPy9a9v8ADGlwWFuuI4DNsy0oU7hx0HPpXm4/EqlG3U9jLsG68r9Eb2j2EUVoHa2WQchSTyP8frWvDCtvbSRoqopB9sk/1qGGU7x5SbgvROAB9TWgsLPEoYAs3XNfMVark7s+xo0FBWRDFbg2rYKsWXJIGDnsKRbbyFLNES0mMjtn3rZt7ZmBGzjoD1zViSxi8oK7ZPXANYq7Oq6RkwRyMNwIA6kBasqqYBIwfYfzrQjtm2/K2QvOMU/7PK5K+Wd3fAyMVSiS5IzpEfZgEKM/Kw/OqFykv+sYFMAgYIOa7C10gSRbZVyDxtVhkfTNR3ehRBSFYHbkYPU8fhWnsp2uYe3hexwc2N+4gk4qhMxTf/tDoe1dJqFhsx8gAycZNYt3CvllW+U9j/dqdeppo9jn72MsMw4V+COMg1zGobWnzIo39Miupm/dzsBjGNoFc3f2s4naQSOVLbsMc8+g9K0gzGpFWOXvYR5bqSdoyeR3965/gSbWG72NdRqMeMuhJB6qRXOyx/viCBkDNdtKVjzMRBNmRrOnywyi9i3QoOscJ2q4PBHsRx7VVi0y8uQJRfRsitiQMiGaPj+IHhs4yD1/Gu0gg+1af9nwgbBwWGRn3rldVsL2yuY5LUuyBd3lRMOeeqgg9x0r2cLX5lZnz+Mw/K7opappbLCTJHps6sBiURbWX2xyp/nWJctcxBIIrSFxwgkhA5x3UEdfrxXUQaa+o6C98k8eXJ3KPlUn0OOh+tY7aOzFnhgJI6YbYOuDwPr1rtuedY5WbWfsupkvPNLHM3lSF/vbunI5HX+mK07W5JYoGcMOSDWbrGieXp8l3GxeJnIAk6oAcBj9M1FaXFqmmie41FLd0O0xnk8dMe1VFmckdIH75609Tmsax1K2ulIinD4Pfg9K1Eb5c5rUgnFOFQ+ZinBxQBr0U2lB4qGxsWkOc0ZpD15pghQaD1zSUUDEKggjFV3gK/cPHoas9qKVwKJzyOQR2NN3Me1WbkhICwCk5ABNVGnmLKFcoo7LwKlsaTY4n1ppYUvmzAHMjH681ELicg5ZTz3UUcw+Vj+SCRwPWrX2fEouAW3uT5jAcBuhX6cZ/OqjTyEBQsfTuv61praAXjJHcGKOQb1yTnaenXg/WhMaVjqfBGkRSa3HOrCVYQSjBg23PYEc+te2afAxhyBgk7QT39/0ryn4d2rjznLpMXlKB40KZCjnj6n8a9k0uzwoTJ4A3c9Tmvls1qOVVpdD7bJaSjRT7mzDDHHAE28k9hnFaNtbqzhm5Hao7S384Kq4IBwSOuK39MgUOcAHH3QAOcV5kY8z1PXnNRWhPa6U7IrkAA4IUrirJ04vcL+7+TG7d6/WtZSPsu0YBxjntUcUvmuqAgL3x29v512qlFaHmSxE3diW+mCRMkRqp4UhecUyW1SIgswO77wyV4//AFVs5Ij+UjaOR6VlX7N5/wAsZODn/wCvW8oRijmhUlKWpCkaKxK/LnPzL3HQGorxmCFXjdv9og8d8+1RCVS/mbmwAdqnhfxH8qJ5UkiaN8kKMFiep/z/ADrNvSxuo6nO6hBbxkhU27ycr0z7CuV1CNN29OgBBX0rqtSPVEjDuM7MnGDXPy2x8tZZAN2DuCtnn04rmmjupuxzN5bLLA4YZ+bpjpXP3lrLC3B8xh/C3XHautuMA4jOQT09aw7+AbN0pVTkgEHtUxKnqjg79mVzgYc/N04rInjxdiQrwccD1rob+GKOQqGzxlRWNLE2TuBUZBK11xdjz6iuRgmJtygqpHao7pTd6e8cfzTxjcingkg8jj1GelS3RAhBVTs21RWQOAC7LICcFexHqO/Fd2FnaR5uMgnAzP7eFlETD5cscg2yJKNksRz/ABHjcQT168965yW/nu5ZY1nKqzNv3Ox2Y6nB9a1NehW5dJw8YkkQidAuUcg43Y9GGM+hrGvfDskwluRMsqSH/WIcYbH4f/Xr2k7nz0lZmJq1pdeSweYTsww7I3AQjIBPXPQ/jisSCxS40SaaQKZgP3ZB3D5R0JrU1DStRtpZrUvOViOSXI2xjHG4+nIOfWqOnM8E0lkGDeYoGW4w3c1aMpIXTNkU3nNGF3cgDpXQxSkjmsCzj8ssDjAJwB2INasb4GcVoiDQDA1IpyKqIxNWI2PSqEzcoooqRi5pKKKACiiipAO1FFFAFW+bEKc4y1UlwcetWr0kyKuRgDpVdF5xUPc0jsPJ+Q9jUUajODUxXCetNjX95jHakURSjk1raZcw3l8mnRydMeZNIuRnvsHt068+1ZsihgQR1pLCJbS6hiScKbliTGpJYDOOfQHB9zjsMmmhHtXgG3ij0yAw42NIxXGORu56cenSvXtPtj5KbflHTPcd68x8CW8a6NaCP5lHyg5zn3zXrNifIhzsJ3ckN2FfIYx3rSfmffZf7tCPoje0+KIFWZ+V4BBrWsoIoSTFyOSOcnOK5/Tp2ZtpJIIBBPAzn/P5Vv2sgEmW4Xv6YweainYurc1Yh8nODgDJ4pttguZsgENtwe9OQrJHiM4XbuBPSnw+WHZA2RnGMY7dK6VHVHE3uW3kiZMlgwH8PSsm5cMWwc46hug4rSk2mIHCepJ7VmTuFlIjjDEdyO/0rWcXYml5FNLXMZ3r8rAqCxIxk4NLK24pCrlUXqCP5nPtT2M0jgEMecn0PtRLEMsDGNwH3f6e/wCNYHQvMyZY4i7MSwJbPPbp1rnNWmS2icNhdpwzL39sD8K3Lltsn7olOcnn34/Gsc2oiRpTuY543HcR71jLU6YqxhxRIZowy7h94bhjrzWfq1suzJQnIOMdDXTSQl4jjblTuzntWFcIyeYGztI4B7Hv1rO1htnA6pGmDuUqM8c/rWA6u0rFRuJHP09a6vWYkWUHAYFsMD1A9qzXhhIJjABA7dDmumOxyS3OcuMLC6lgNpyuR09RWKl0kGpR7mLhJQ2R27c+xFbl4imeWM5B+7j1P1rm1byL5S4C7CVLlcgjPPHf/wDXXZQ0ZwYnaxNexRxXhS4RGt3YxkEg4HXHtx/nisaG2v7SVo4CtzB5jR4K4JXHcDtxnPaumv7eG/tsRny4yuw+W2RE4+7nuVbt3BAFZunx3cfn2c6SvlhEkpIAYg/Mc9+OK9yGx83V3OYvYAJbi9Z1TA2lpJBgjGDjjHGOhFeeyTtFfPayxqJd+9J1P3h1H6Gu58RSx29+mJPKjfBWRgGVsHj8M9SPSuX1uyCagsf7sHhwCBleBxx25/lWi0ZgxLeZTMcRFQQPx960YyQDz34rIt0KTDcQoHI9K0IZP4efxrVGZfR+BmrSMe3SqKNk4q3EQR1qiTpKKKKkoKU9OlJS9RSYCUUUUgDvRRRQBQuDuuW9BxUakE0rkGRz6mmoOOnes3qarYkk4XApoGAD3ofJwenNPC/JkrSsMjf1osJbb/hILJLgEIsmZPQrjv69T+dDYqu1tNNqFqIMBC/71+yKPWmB9G+AwTpMOwjG47c+hNej73x5ScHoSO1ec/D4xHRx5bbo1YhW9RXpEaB1jkOQpyWJr5DE/wAWXqffYL+DH0NK3RkjfyedueF5JFdDZwN54lZeQMZAyOR6d+O9YtgwScB8EleM9hXUWuDBsTaSvqT+NKnEus7IIpLjdGrQv5bLnd0x6Ag9PSpYJQp+8AxbGB05NA+XLEAlh0A4BNVSiGZi2CFbOMd+v8v5V1rRHLy3NSR0Fu2Cwb1xwDVNgvn7EBJLEZPUYGTQ6t9mZll4xwf60yBjJbidTufbkNngZrST6ExjYmih2QElTlQQQOOf61S1A7WGCyZYDBx06n6d6lub1LaLiQM6gjLcY49e1cnqviOOCHzJZlQqOQzYDcep/wAai19EXHT3pGg7wzXTxCVWMfykK+4jnNUbpGeVY0ykYGWCH72ex9s1zQ8VaNpJeSae2tTKWlJMw3v7479Kx7v4p+HIjJJBqMd1EoOQDty390cfhVLCyfQmeKpx6nbCHYGRCyMVJyADjPH+RXMaujfMY41ducx5xisxvizpUlu7paSOVJUiNhxj61yepfEO21A+dZzoNrbWIwGQ+hHak8HN9DB4+mupb1RfMt5FkXcUbIZePcVk28ocEHOVOR3zVa38R2F9cGCSfFyw+VQD8+ep9z9KbbyY1K4tWBBHPPUGodJx0Zca0Zq6IdQiLXBdcOW+bHYVyWq7PM8t8Als7CcfiMV1ccpZDM0bSc/dHXGay7rTEuLxlkQvuO0+3uK0pvlZhVjzLQw494aNJWBXfhZ0YiRB6H+97H8aTVDJZ38czQP5rpwwbKyLzkrjuc9qkmtns7lAZcqSQpZN3zdgR2PoamjgkmvTo7qFQMHhbd9xzg5B7c4yvTmvaoTuj5/EQ5ZanGa9DGmjJ9pheV4jhoYDknLZByT94E4Prn1FccI1lvR5iFJFZtwJyVyP0r06/wBSVN0F3AUmQsolABK99pGMnH9K47WLX/SHnjIM6RCSQnGXB4P1Ixn6GuqJxNGR5Ixx2p6rtwA3A6A1D5/vSNNzkVoZmnBG0mCGX861LbT55SNrRj/gVcp5rb8g81JDLO0gCyMMc5BNO4meiY4ooopDClFA4NLSYDcUUp60nekAdqQnCE+gJpajmOLd8nHGKGBnE/J7mnx8Dmo3PIFPRflrK5sKSS4FSjPlCoxzJipeQKVwIGHNRb/KLbSQTjOPQHJ/kKmbqTntURX5ScdqYHv3wyAj8PpbuzAxttYevfP45FesQMBYYY/ia8T+FV99qe8QvuKPGeTjAZAP5ivTdc8Y+HvCujpdaxO4llyIoFXk4GSeSMAcfnXzmJw7lXkkfYYLExjhoybO2tHR7YIAxbaB9TitG0vUE/kg7Xc5ba2efavmG4+K+qX10txZ3c1raNlI0C/fX33cdfb867Dwz4xuZ7tJpL9XJwGaSRWQcZG4Lgr+IrX6jOMbgszpylynvUNxKLraSoz1GDRHIBcn92NjcgjofWudtdZE8Mc0k0OT0MD7859MVPJqMf2+NVLbWABGMBea5pXjozthKM9UdDMT9hDyBEK5YqOMgdOaoafdg28zoGz0AJ7+o/OkuJzcWDPEeFGHwMdOn4VxVzrNzpF+S0GYGx84ONvGMfT3pOTY1FJNM1tQ1J0dVkkWQg7QOoIwTzmvMPGGuJb2f9oXd2ktyilo0kXcisST8q/7Kgc47+1aGu+MLCNmfz4Vd/vZOefXA78/415hrzt4hvhI+8k4SI8qSAegA5P4V04d8ruebjZtq17HJ+KfF626NELySKWYq8wkAMjDrkjHyqOML0z6muOn13WJ5BFYSSIjyFt7D5jnuQOmffn6V7Bpvwim1GUT3sEwBbfmY7M/hyfzIr0TQ/hbotiN0myM9cQqqE/iBn9adfiDBYb453fZa/8AA/E8f6pWqPRfp/wT5in0bxfqECi0sbp5APvLut4x77iRmrNt4G8dnBk1HSLRT94+aZG/8cBz+NfWo8K+HbUb47SF8f8ALRuTn6nmue8R6PpVza+RIwRWbjEnDccYHSvMfGOHk7Qg7ebNI5ZU6yPD9M8G38U8c974wjgkjcOot7KQoCD6OfSu6e2tZn+1R6hJM4GC0ZC5+uM1RufDKWV3iK4ZI1bOwHJA46E81mvJJZ3SursUJzvZs5H413YfPsPXklOCsc1anWoKykzyDxB8SvHWkeLrrT01SKGFJPlEdrGMrn1INLa/F7xZBOTctYXgzyZYNhP4qR/KtDU/Bb+MvirFbxymG3LO9xKoyVjUZJHueAPc1qav8H9HtmxZ6nqC8DiRUf8APgV7VV4aEuWSJorF1Vzwk/vM+6+IF1rFmty2nwQuG+fZIcH06++K6Ky8T22qQw2syfZb24wzTPbu+V5HDA44A6kDFZnhn4eW9pdzzXlx9oRB8ivHjBHfvz6V1dtpk2lFoYtGt/LuECtMIh8wzwQOjficZPStaM6T0gZ16daPvVDnLrUYdR1m61Gwk8y2cF3cjlxu4IBHc/8AoVEXgrxRr3m6lbRW8KNH5YE5K7xkkkDHAPHWvTPDtr4bnt766RYgI2BlMrbmO3oPTaO2O/NUr3xP4glu1XTkitbVsiMFNzMPU5/lXJicXOEuWB34PAU6keap1Pn3UrC/0bUnsNRt2hnTqp6EeoPce9VhKfWvY/iZ4Uvb/wCHZ8UyxbLnTXCTcYLIxwfyyDXhxlPTPNd2Hr+1hzHmYzDPD1HDp0NG2JuL6OAHG44zWlAiqAFH/wBes3RwW1BWwcKrNn/gJrXtV3Txp6kDFdKOQ7ojikFSYppXmkAmKKXFJUgIaSlIpKACobg/uMHuwqbtVa6J2oO3JpPYaRScDdU8WCtQkZNTLwtZGoqbS5I61J2NRwLtLd/epT9080AVj1NCjIJ/Cl25J5708DCkegyaANTSvGUvhG0uZbXyxcz7FXcv1GeO/Nc7f+ItV1aYajqDyzzklYYvN3M/PGB0AGc9e9c/fpNqnjFDZ7rtYtg2Q4Ye/I4r6F+H/hDWD9llOgxRSSkD7RqMgHU8YVecfnXDicVRwvv1Glfuzvw9OdaPKr2R5jb6XrWpmF10e6HokgeNV/HkV0mladr9rdRzpZzRsmQWcMf++SP8TX0DdWdxp8DR6t4ptNMWElWW2hGQQcEbmx/KuO8QeJvA2jTpbTa3rWrXTKGYJMFXJ5Ayq/yrx58Q0akuSDb9E3+djr+qqklKf4tL/MpaRrniSzj2tb3jqD91Sdp9+laSeNNVt7xZbu1nVVHIOc1zF94k0kPHHNby2PnjdF9puJgWGcHB6VS1SBBp7XsV2rBcZiMhZsHuMinh6lHEzUJTab2uv+CbPGzpQcqcE0vP/gHr2kfErw22k/br/XrW3hYmMNJIGG4ckDHU89K5vXfip4VvbuKw0iae+kkcKZViMcYycdWwSPwrzb4f+ArrxFqTaNAUGk3t41wFYbTDIi/OVI/hYMufp7V7jqH7N2hW+jJc2FzJb3kYDxuHYhiOcEHtXoKnhaU3Cd219wPEYyvBThaKe3c8k1iy8/WykYUOoDSPj7gJwAPc4NdNpGp6fodhut9O33J4L53O349awHW6h8X39hdoUm8tNyn1QlW/mD+NdNZtClkLeREgeQYW6UDP0Oe+Mj8q+Z4hxXLN0vs9kaZfSc4889ZeZUuvEes3G6XUdSbToT923t1zIw+v+FTXPhvxjdeEpNejvZtLtSwjia9nbzpCc4PJCrnBwOpOB3q3baFY2mrJdRXUdxKh3BrsE7cdsA4rtNQ1I654Zk0PVLWzvLW5jKOqq+AO2CDwc8j0xXydXFwhbkSOyvgq017jPnPxDrurabZRx2PjrWrmdmJeFoDFGFxxhi2S2eowBU+mP4k1vwmNSXXr6O4jlMfz4dXwOwxXcXfwu0ISxldN1W+6Eea7Kp9QSMZxUl3pr2VgNPsrG3060j6LGcsAfcfia7J5jQlTUacbv0RyYfK66nzVJO3qzy//AISTXbC7MWtQeYBnM0Q5H1H+FT3BjvdPZo5BL5o6jsD/AF7fnW/eaPZy3hYjdgDJcE7qSx8LB7rfNZhIid21lI/H1rN46nF8yVn5HoRwV1bcyvBdh9n+Kzx3KFnbTGlXJ6/Mqn+VdrqGnGWYu8ZjHIwRgYpdEs7LSfjdpa28AiWXQ7kEZJyRIhB5+tdPrXlXUJkVeRn8a+vpYuVaFOb6xX+RnQw6pxlHzZ5/JaxxzEKBgnPHfFVr+OG80ye0muRHI0QVMnCo+fkfPboAfqD61dvSMNtJUg9cVgyxXN7qYtRMsAmUoJH6Fv6V62Fqcs0zjxlJSg0ReG7K7v72a0lcxr8nmxNyQVOcccHPB/CuylsAmsWKBlwZcYHIxiuU8PatHb3jJEs8k2fLZ5QARjpnHXjFdqC5+z3rrlInBZh6Hj+tLFyftDfL4pU0aviPTo7j4WeKLOUL5H2F5MZ77Cf6V8RW4aTb7gE19e/FXxAPDfwZ1XkGXU1FpEM8ncMfoMmvkq3ULgDpXdlibg2eXn0l7WMV2NrS0CGTA+7C39B/WtjSI/N1qzjHJaZB+tZWn/6m5b0jA/Nh/hW94YTzfFdin/TUH8gTXqo8BnXFfSm4PpUuBijAxQMix7UhAqUrxTSoqQImX5eKaQamxTSvJoAiqndNmYL2VavMuKozKTcSexxUyLiVgfmqXJ2AUiJnninkZYYrEsdEME04+tPjQhTxSOlO4GTrNzcWOhXN5aBDNGoYbxkYyM8fSuX0yK517zr7W724ksoGC+SjbfMY5IUAcAYBJNdrdWourKa2OMSRsnPuMVyvhm0kn0K402UmGe3uDvUjPOMGscRUdOk2i6UU5+8T3urW9vapHY2b20cZyqREKpx6+v45r2/QfiFMfBdvcspSQQgbVIGDjjH6V4nN4UhnKiW8kK5yyqAvH1J4r1/S9Esz4eghtLaRpPJUKqLuUgAYyT7d6+Nz6VGdOF9dT3MslJTkodjcMV18Q/iVpuq6mtxJpWpQQXIiQ4QORtkU464dHzXQ+PfC63epabqXhNIYri1ldDAy7QysMZz6gfjWl8KtPW70pdKmIgv9Onknt4xxvicfMg9w3zfjWs8EFhOVawuJZgSAXJZfr+NfL5nmLpV4zpaRtounmb4HL4VL06zvKP8Anp+FjgrT4VJe3Avtd1S55AYrF06dMkk+neujl07Tvsk1hAjzyTW7weZJjgbSBx2rUcXNxkytJBE3/LKMkbvw7VMumzWmnS3kdioaONjFFuxubBIBPucCvMjnFVzjzS6qx7Mcvo0oPliUfgDBGmj299MFZgJzg+8gX/2Wvosie50kTDYQfU449q+Yf2fb68nsLyG7i8lIpWjgbBG5S7MTz1+ZiPwr6ctpwmlrFvIUDG7A61+mq7rVFJ9X+ZwwglhqTj2X5Hzh8c9AurGWPxPpClblQVl2Lndxjp7jj6gVxHhfxyJ7+08L6vYyXou2MUOoCMLkFN6lkxyvYsDgHFe7+M0j1G1uLC4jzHJxgcHPr/UV4Rpd9N4L8X/2RfCNIpHL20kiZUknO0HsCecdiSO4rhzHDU8VhnzxvKK07/0jGvTrUK8alJ2jJ6/15nWzafcR3CRo0mG4BPUH0PrVu0j1a3T5WkAHtnHNbN1rltPdK7WEZAAbdHIVOcVraNcabqQUs95EUJIHmAketfmtZySumme5HnX2Tm5f7bk2pIHG4cZ+76fnUcXha/v59t3dhId2P3ec9PpXpcNnaIoZLm5fI2sDgEfj6mtJGSOPcbYxYHV3JP8AhXmyxco7NGt+6OAsPAWnWFu128DMV+ZSW3Mx7fjWbfadI3KQ7U5GWXBx7eld1qmpyRW5YysynoCBXnnizxHZaXZfa7q4dVZtixqN0kzdkRepJPFaYONbFVVCF22dFlCDlPRHIxI83xehcKwaw0hg3OdryTDAJ9whrdv5GMblGZWIzt9D6iszQrLU4bW61PUQkOqancLPPAefIiUbUhz6hep9TWjdJti/fNtG0/P0z7e3NfqmGp+zhCnf4Ul/n+J4yd7y7u5y2oQnczA8k85rD1D5V3hdrDBWYc7T64xW5fSMzli3UlSuOnP865/VTIfmD7BGu7zd33cHqa9elujirWaZBpGkNZa9C93qJkgnUFmdh+7b0Izx1x+FerfZ7OLwRelnJKxZU9zXid9f3Edyi265RlkSQFs7WGcAZ79DXotrq8t54ettOeKRLi5KAt2Ydzx+ddeKp6KSOfA1t4M8v/aK1x5vEei+G1YeVZWYuGUf334GfwB/OvHYR0rsPja7y/HTUy7FsJAikjHAjB/rXIwAYFethYqFKKR89jpudeTZsWYxp07eroufzNdJ4NTPiy3bGdqu3/jtc7bjGlcfxTfyX/69dV4HTOvSOR92Bv1IFdKORnS7cUYp9FAEW3A9aNvfFS0mBmpAh24PpTNvNTkZBpuKBoiC5dQfWs5gSzMB94k1qtwrN6KT+lZ20gVnMuJFGgxzxTtvNSgYXJFCrz04rMoUKRGKRxyKsGMiNT2qJwD/ACoAhC5ase5i/s3xVHfgAQ3qeTKewcDg/iMf981uqMGodQs1vbGS2bALDKsf4WHINTOCnFxfUadncpOC8hjZgme7cAfWvZvDoA8PW4VuWjUHbzj5QODXgj3WpCeFXtPNUfu3UcMHBxyc9Pevofw7bquk2qoBhYlJAPXgV+d8TxlRpJPzPpMkjzVWdf4fsmtpBcWhZLhTvRwctn/9VdncWS620c/2m9tJiMOyN+7Y98rXIWDpbsH2mQk+5wwPGBXbWNw80SbXAPcg8ivy+pj6sW47o+xlg6bSmlqupHb+EYopxKdQjumA/jJGKr+K7NtL8KXFy6IIoYXkdw3HAJzW9bBpt7umGBx2PFeffEeSXXdRtvAumuxkudtxqToeLW0B5Lehcjao78mt8noPG4ymmtE7vyS3OavJ04NXu/1KvwqtBDp9gYkMeIEBzwTnLn/0KvdInJ07yG+8Ocjr+FePeEykV20CYTZOygDptB4H5EV6xbRlNPMqg4Q5c5z/AF5r9lw15PmfU4JwUacY9jjfEyYbftBHbYMkH6V5j4q0XSvEuiPp99GEdcmKYcMjDoQa9V8RXCozmIE/LwMY4ry/UmbzRLBuYHnJHT2rSN4yuaVYqcLNHm1h4h1bwrONJ8RQzXFsvyx30Q3EL23Dr+P869C8PeMfDTOskXiHTlZgCfMmWMg+uGrH1vTE1LSEuVIE6E4IqPwTa2eqSPb3lhaXDxuVbzrdHP6g5ryMxyTC4tudnF+X+RjQq1aPup3Xn/meqDx34StI/PuPFWjRkDGBeRnPTng/Worj4n+GrqPydGOp+IJj0i0uxlmBPu2AoH41PpfhvSLHbJbaFpcZJBBWzizx+Ga6RLmUwLb+aBGB8qKMAflXgrhfCp3alL1aX5L9TqdSq9bpfL/gnmOp3njbXpXa20Oz8NwN8puNUl+0XCj2hjO1T0+8eKy4/D1hpGr/ANo3dzd6lqjgr/aF6wd1z2jUfLGD7DPvXpWo6fuEignJB5zjp9K5XV7CZbdXRDleSGBy1e3hcCsOuWlBRXlv83uRKKkryd35/wCRj73+0fuWGQfugfe9R9Kmv7USxu8igAgOAx9OwFUYZZEuVDBdvQjvz396sm5CKJHDMpO1lAJI9z6V6caTicrkmcRrzSQtIPmVseo6+v0rIFu9/pShp5Q7HaF+6C38JI7j+VbPitULNeI3JGHJXI4yc4+n6iuYsvEUpJkIWGBYtpIHDsOSB2BO4t6/lXrYajzrU8jFVuR2OZvbSYavDp05YBfnlc91bIP8mzXpng/zNQ0CKNB5clmW254ONxx+nHvXO2SG9vXjvrcs8zeaEUbjt4wF9RwOPr711OhKuk6h/ZRYtmJZVm/hk35bgdhjGPpXVXV6ehzYR/vVfqePfHfwre6d45tvEjSia11GNUDdCjooGD9Rz+FedQdBX0D+0BdwS/D/AEuIbd5vFx68I2a+foO1deDk5Ulc4MzpqGIduupsx8abD7ux/kK7DwKv+m3kmOkSjP1P/wBauPXi0tl/2Sfzau28Dpi2vX90X+ddaPPZvlaQqKeOOKMZoAjxSVLtpCKQEZHFJtFPI+QUYoGiGXi2c+uB+v8A9aqTLnir9wMWy/7T/wAhVTaSwrKe5pHYaFASmoh3n61OV+T0+tCkYT3NQMldQRjpVMjLGr0gxDnuap4+bFADVHzDPrT3GSacqgkcUEcZoAozxkFpUhWbOC8ZwC2OhU/3vY8H2IBr0LQPiH4ZgtFhvr8aXIBtK3ilQDxnkj271wuOvFdv8Op5pby7tb1DcQFVdROu8bRkEANxjkV42dZXQx1H96nddUenlWJnSrKMHudnp/j7wasAeTxboqjdnd9sTp9M10unfE3wZM/laVd3Os3A+UQ6RayXJb8VGPzNZFvoukf25tTR9NVxj5xaxdT/AMBr0PQdB+z/ADx4j+0OAwU7QWA9Bx0FfBS4SwfNd8z+aX6H2tPF1pRs2l8v+CUP7S8ea7F5VlpkPhKxc4N1flbi9I/2IEO1D7uePSrFno+naBo88Gnl5JbiTzbm8umMk90/TdI/c+g4AHAArsYbCO33qUIxg726n6Vn3UcM1wVCBXXrur2sLlVLDR5acUl5fq92RGSvzPVnHaVAov3DZIkk3+h7V7RokKS6VJAEUs65PoO1eQ3JGneJ1yw2sQwyPwOPxr0vS7w22no+4Y6svYg9K9jDtU5XZz4iLqQtHe5zXi+0WC/eIBmKoGBAxnI/+tXn8oWSKRZE2sMj3r0/xO0N7EHdcsoGGHY/1rxPxZr9tplxMDKgC/efOMGm/ek7Gik1TXMJHHG9hNb4HykkE9qreCoVPiS8hik8ssQ+Qeh6HHvXIt4zK2rvDZ3DK38ZXGfoCa6HwDJeR3F1qlxEQWJJRCDjH8PHU/St403u0csq0Wz3Oykt4bdFvn3Jgbm25x6VvwWFm8YkUBgf4x8341xekalZ6rbI4uAy7c8Ht079eeMVej1WXTZRGwlWEtgYUjt2/wA9a5+Wz2NW01ozbubZBKRIFyvzbm+XJ+n07fSuS8QwJBasfKJlQY+UZ64P5eldC2pJJEpS4c7xwoI56HOe/FYGtXARm3hWkkIUI+fu9vYnjp9KGr7EOfKea6nCLK73RkgqR8pUk49amttRt7lCvO8qMjafmGO59/SpNc3y25laJkdW4IwuTnOMdyR/SuWGpJHN9nk8kXAH7oy8EjPCkdM9cEd+PStoQ5kcVSpysyfGl5NJpUkcKvH9m+ZXjz/6Dj1xXK6LbXlxo0colBadfKeF0Pynfkcd+OQevzEV0Xie5W9tTcIskUjPnemEKtg5VgODkBsZHJHY4qHQdQtrKxms7m5W82R+ZHsbLfwlsnseFx/9avVwsOVWPHxcuZ3EtLG5+z7pWMksTmEFGJKkkgdMYySFGPer+uajYW+rRQwSN8kUWyaXHJUYOTxwMYH41FbWd48l00l/KscKm7XYmN/IwQO/PH0Ncj4t06e28TSWiuptjGskQRsgDJ6+vIbr2NVNWg7hSl+8Vjivih4pbxB4rWzgkLWdkCqHszn7zfyFcjB0q94htVg1yQsSC4BCiqsP3K6qKSgrHmYmcpVZOW5rEYSBfSIfrk16B4Ij/wCJHcPj70+PyX/69cJIuLhU/uxoP/HRXpPg2Lb4TRsfelc/yFbIwLJGKXFOIpO1VYBvakOcU4DjFLt+bGetTYBjDkA9hQFFOb75pQpxmkNEFyBmNe+M/marBfmzVu5/154xgBf0qvjmsZbmi2I5W2r7d6cihtmz60sqjIzUsSJuwck9qkYOmETd3P6VW2ZJ9auyYGSegFVQfloAI1IXNNcALipkGFzTZAChoAq4611fw6EMXiZ5SCrmNstgncAV4xnHGSfrjJ5xXLlSFJx1rS8OX7WV/cwpu33UXkDaueM5+uByTjrgClOHPFxfU0o1PZzU10Pe9Fhhm1h/TI2scfMAQM8fQ16faSBbZWUKhO4YPbHc14d4S1Uw3iaY7SSNGpkebgYLcggdh09+a9CtdSuY7l4JGDKXG1s8DuR9a+cq03GVj7HD1uaFzqrrWoYYwRJkscKcY4/qaz7OWV9SLGMMnP7xj/F2ArhdS1mTUL2dXimaOLZtCdWByGwO+Bg/TPpWpfXVyLldI0h2Ro0Km5lYqofYNwwBk4BXn1YVpDDzlaw5Y2EL3F8UXUF2kn2NkkaNvklGCQ3bb68n8azvDvxH07UNGEc1yIbpBtaB2AbjODjn0zjriseea61BJLWGdJYI4WMkAjTLMxbG0AjHABx9PxwLPS7G1v8A7DLbi3SHJMijaCOmxCB8o55bjp6V1LCrls9zieYSUrx2Oy1HxxZtpNwWmZsEqI15Zj6CvK10zU9f1OK81S3MdrK7BVVtyx8ZXJPU+/5V2+p+GRZKttbo3mQxEKqsAecFscdQMDp15PXjq/D2mW9joReeN3gXDLIpAWUYzjB6kEdP8KcKSg7omripVNJM8ivdLsrCxktYpVRI2DbnHzOpwCOfckY9a6TS7aRVf7PdC3bKgxp+7OQOOnfuc9RjkdrHi/w5b20pn0i8yLkrG1tcDcEJIHJ/hGW7kEEH6VlaJqCaCTLcyW87yhigkOQcN9wsOgwCN2c9PpXZypq55/tZJ6nXw606X0MXmwsFZkdo1CsWK8jHJ6HoAQcV0AvzPbxvdXDTWU4VWYdYzjgnng9QSPWuGuNP02S181rK4S7a8+SMyBTFjJCEnjoPvA44HHNbulX5XVo4L2YW5YHaARt4OMtuzkYBz0AI7VnKhGWiNYYtx1ZPqN8+lziKeU/Zm2xsE+/Gxz86/XB/Hj2qQ6xcnTfs8h88xgESD70vXGAAef5YrL1X7Vf3OoQzXQQncY9yhisQb5lAHUBSD6j73rVfQrPU7jRbxjF+/wBNkcQtyN6ADbn14I59R71z1cPyx5jopYpzfKQ6xczzSg70cMvzmdW3xn0Kj9Pp78+d3cltFfyiS7M8z/6qJFDu4zkrk4yR279K7LWLi5V1vWkkXMYdZlzuVSP4h6g8cggiuB1UnVbxWi0z7W0mZElihKxy9yMj7rDrwQQRmnQgjLETGm3/ALR1mSKaWSTzdssFxGoUH3OeGzjkdQR60aHp8DtLeyvCk00bYKKcHYMO+PUdce5/Da+zQLpjF45YLpkQSLvHyHcNvUckgA9sknviqDQ209r9rsXkmmjut80EUZUcnDMjD+AgkEEDkd8V6NKNjzqstDVcrFp+paz9rka3kDGBFXfvJCqAfoGOB7H0rhri8W/1uRxcG4RY0RHY5O0DAzx1rtWeVYE04efAVmlchTzJ1GBnvwQB1yRXA26jzJpmlBnDEtgcPk/eH68VGKX7srCy/eHA+NUC69Fx96M8/Q1kW69B61v+NkzfWsh4O1h+orFsk3XES+rgfrW+Gd6aOLFq1aRsXI/4mUo9Dj8gK9S8LRCPwdZZ/iDP+bGvLJju1Cds/wDLRv5167oieX4X09MYxAp/PmulHKysR6UYNLRVDExk8ilVRvHHvRSr0Y+1TYBgHenxrucDtmkA4xUsYw4PoM1LGilMCZmY88molXqfepyAQCTUaAE4J4znmsHuakUn+tA9TU0eN9MYAzE+gqQDao9TSAa4yjfWoOemKsyY2YHaodpxigBVH7vFNIyDz3qUfKgB700jHH41VgIXXMYHtVVJXt5/PjOHjbeDjPT2q+64jyKxtalNp4b1G7Rypjt3IYdQccfzp2sNHeRa1Obq01KUSsJIPOLBwzE4BO4DjrkH3GK9btLqG88NWN48zSNcJ5js5+7wOmO5Pp2rxb4RnR/FHw/W0aQw6nZWqxedLhzKcuWBycAbiu3PJ/CvV9LuorawsLm0eZRbK0UcEuN5YkLkjuQxI/OvNx1FK0l1PZy+s3eL6HQeHoYJdQllvCPJjfdvU8xDaRyD069vUe9VUKRTfZnKpBaAPcfJue5VjhuDjjKbiehyPSrsNo0sd/IIGUveKsiIvKfPgMPZgCD7/WvOvEV3rfh/V5NbntmurdzLZyRxNvDhSNq7e3AON3HJrXDctlcjF82tjbl1Cw0vVmTT13rJIFlduNz4IKptPGBg5/Wrq26alq090tmixIiRBS5UO/Tj1GRyTwa8006TxNa6dHdf2Ss1m7Rkee+JIyFUMw45JwDz+ldZAfEl1EESB5Ny4bEgXIz3H41jXr30ideCwEp+9I768Zo5nvy0EhRyZTuLPKi5wcY4y4Y46U1lvotumWkxVnCzcoSm7arOB2OMlR65PrXHJF4vijUQ2Nyo+6FMykEDtj0q3KfG9wkbtp3lu5Cq7SKB6VCqzatY9JZU2V7i91EIttrckauCrylwNzcdTjuARj6Cua1e10oi+a2kijacyorYPEb9eOOeBXRR+CPGF68t1MtnACfmdmLuRntnA/CoZPBFlFFJ9tv7qaQE5AOwAjrkf560Xnu2EstilaxyN/rm/SpBe6rEjhTy/wAokK48rLA9QOM+lYGm+K7i/wBcSP7cYJFUqtzvZwjDlSCTjuw4PI4xXWXPgrTZb4ZtN4BxubLHrwea14vD2l2Ritkslyy4DFQc84Ofzq1iLbnBWy6KV0SaRqcfijTYyLyK2uN+yRrZhthldMAgHGMFcnBzliBwK7fQ4LjSL/UJprMCSeNH3g/MoCj5CO5ypAPXBFeeHSZLDU4LK8jjieaQqrQcqQVLFmUeny4YdcGvWtGurO90t9OZ4ftsKRos6gE8LsGf+AAAVdWopRfmctCk4yXkcL4jhSTSo5orhFO+S3aWJ8qFbkKR9D0PvjpXldzdSafPeW9xL5krABDEduTng4+oIOM9817Rrvhy7/s6+uDGRLbTNIZ4XCrJGGDKwHQsCSuD7+nPn9/ottP5g+WNpJGmModXBOBtwCQwPUYHr1OKWHhZ6CxT01K+jXsWq2N9dRpJIbhVQrcDH2fGGJxySuB16dDWcHuLAOzGJZZImLiQHchHfPQ53AA98E1cubS/Sc2sNpbRpKzJHKsjYHQsj5wFxweRxisrUftq3/2N7eSO3iChmZCXiJb5gx6ZHPXjAOK7oI8+o+jJbmaF1Et75ksVuwNuqsSyrtO76uCVYH2x3rlT5v265LzRyq0m5XjXasgP8ePU/wA811ev2K2ckb2TiUyOyMo42ttzg/72NwPvjtXHxH/Rx1BJJwR0PescY7RSNsErybOX8YwF7RLgDhJAPwPFYWkru1O3GP41/nXa+ItPlu9Be3hwJXwybumRzg1wvh66WTVgjqYpoiweJ+CpAOavByvC3YwzCDVTm7mirF5HbqSSa9ntU8rSbWP+7Cg/QV4xagmSMY6kCvbiuECegA/Su5Hnsyse9GKcRSUxjacvEbfUCilIGxR6mgAAp5/1Eh/2cUijjpRIMWrD1IrOQ4lTtQm0Z+lDnAAIxQu3rmsGakR6kmpHBVlyegowCzccZqRwGkIPpimkA1iNiqByTk1EFJZQB3qwVAHuBikjADAEZJ707ARsh34I6Ch1XftHXFSsDuYgA1II1kfIHI60wIJUG0Lt6CuU8cP5Hw/viOPNaOL/AL6cf0Fdo8YbnHbivO/iLq2mSaHFpcF7HJMLkPKkR3FQoPGemcmhJvRAmlqy58EbhLfxxZW00628N2ZFMzfdRtvylvbPH1Ir6qTSkv7N7qxs3sUeF0ELEN5THcSQ3X7wI+pFfBNvq09rqVnHGcJHIrGMPtzhgfmP1wa+8PCmtaZrHwzs7/SrhLmV1HyrnAJ+VWcn7o+ViPrzmnWoc1JxZpQr8lVSWx1NqyXOnRSynZKIAXlZflZ+CBkHk5UY/CuE1PTdRufEyWF05RgjA9WLMTtOew+UAnPTIrrrS/t7iymXyNk2+MPEzYKONwOPbOevTH0qnqV/YJq0F2Wl81reOORN+0NIVJ3c8kkbcjvgH6eTTi1GV+h71ScZTiujKF1psFtpqW0sgVUUAswwCeefTPPOKdp8Ulm4VxjO1geoI64q1e2092qQJcyjdMTGwIAUYGQSe2efy5rPN7JpCTR30ZnCyZRFcMFUltvPA+6MnHHXiuTklJXiepSxKoPllsdhZXSB182NchQCCOOfTmrpuI2kyFGSQVAGcYB5H6VzX9tadBHHLdLLbx5TaXPZgMNjHA5HWrMHimKZ7e08tbeSXO03DbfN+XKlfbB5+orSnOe1jsljqMVfmNC8uLl5C5BCbievbqOO2DXL3Vij3TXd5MUgc5LueMdc/SobjX9UaaREsoo2ZBIpdjuEWfv+nHp+Xvm65bXMdhLLeySTNcbJIFOD8vPCY6qyuMYzyOetXyznvoc1fM4WtDUbcanplrcJBErjzZP9cAWwOhOenr+NbGk2cNzvnxvhV90YkwDkYyQcnp/SsSO2droE2m61jUNKrttUjHQnp1OM98e9dGxl07TTNZpiFwzgEj5TxhQB6YOaxlZaI5I1ZT96RU1Hdcj7dZ3KtLb4Vd8QYBG5PTuf05qho0l1puoXxeIpIyNLGkMilZNuCEU9M7SeDzkH3rRtYmNioisYop5kO0oAgk7A/j7c8VRiso4ZhczXqBj8rcqAeuAV6ZXJ+YZ49K6qcbxsziqyalcpan4gW1uXubWWdAcMJkfcEUjlSDn5SvqAQQRXI6pdWX/CUQS2Tx3dnLEJMR5wJAxBGD0BUrkEcHPXFdHquiMsU/lgME+VY4ixaNWGBg/xA8jv0/GuZs7GbRF87ULtZYnX/VyqQ8qbhlfmXa2OO4IP1ropQsrHHWqXlc12kN0LaSxiuXlEyRTtKNhJZQu4A9RynzHr7ViLJfeTb3skjFfM8m5hK5+UtsGM9xtOQe2PSqdyJtOvZrUanJeWkkRWJJT5YYNwUbdna3HA6ZGM4ojurmC2/wBMMuxYzhmO4yIxBGT1JB3c13QVjzpu7KPiO5a6SOMFY33nYysUMgBJBBHsSDntisKVHkuMlUDysWIQYHJ7YqxKrXviZo4pQYoxuUddvHI9iMH86nsoRdavkD92pwPoK8vF1OaVj18FS5Y37la+tf3tvAAMk/0rifF/gqaS4bXdIUx3SczRrx5o9R/tD9a9GMRuPEscSAnYpJ9ucVpatBb6dol5f3RCQwRl3Y9OBWFGrKEk4m9ahGpBqR4l4cnW+1W1tzxN5qBk/EcivdpFyTx3r5i+1XMeofbYJGgmDmRTGdpU5yMGvYvBHxEh1gR6Xrzpb6h92O4xtjnPYH+636Gvo+VnyzOiIo2+9OxRSGN2+9KVwwHoKXvTiMyHvQAKueppJxiFRn1NSjrUd1jeqjsAKzmVEovjdSFSqZGPpTmGZafJgQhR1rM0GRphVLZweae3Mg6c9qSIEnk9BxTwm6XIB4oAUr696WMbmPpjrT2XaAKdBECrHNACJESrZNSW8JMhwO351MkbbOn0rzrxt41lheXRNFl24BS4uVPOe6Kf5mrhBzdkKUrDvHvjO2t7STRtIn3XUh2SzRt8sY/iUEdW/lXksfzS7z9xO30qa64JxglBsAx371E4CWIJ6ucY9vWuyMFHRGLd9SFG8x2l9MkV7x+zz48ltr+TwndRmQTLuhd3ycKGyozwAoII9eeeleFbVjsjjGT2xVjTdWv/AA/Mt1pty8Fw4aLcoydh69aTQI+95ZANcWLCu07hNyZ2HzGIZ/yPQ/3q0rjSrjzYpWGxVVkATBD7UT5mJ5AwDnnr9a88+FfjKy8YeD4NYRRb3sNwYmhIJ2Kq7nwBnIwIwD65r1PTbq5m0qO78xrmTyzGsTxhsFvugHrgAd+OlcFSgrs76WIdl3Ri28d3ZPJc+TG+cfIc5AJOdx6DO39DVSa4N1byPdxzGM8rEFxG5OdoIHX7o4rY1y9aCIy+aHkyI1G0ZLfMBjPRF+YZ7596r6O01svnG8M8UaCSSQp/EVO2NOuANoPrzXj1IOGqPehUVXRmfdW1zqFpNJqViLc3W3zfKO4jB3AKPQhQMnvz2rmZtX8p7XyYRNM8hgtjMpHlxkjKqx5H8XtW/ca8klzKkjtJHMQkMeRvLqc9j3PbtzVe80i5gv7O2nt5ZZViJVIWVxG3bk859+/Na06kkveMp0ov4Rba9iu38+WZd0YEc0cxCoygkDaenYDJ4zk1LYRC3sniuphJFGp2ljv8pVAA+nHpxnFU10a+e/tUt1ihsjuhcSBcRsTlMcnIGCD7/WtywtrFIJ7GeWJZZJDtQuCGbZ83zfwk44B9PalVk5KxdKlyalS/1RNPS5t1YXfncOqj5th6MOOeuD3yKri6ha0Rl1BkM7KfLlXaFkBAJBx0/wBk9qvHTUuIoZlgt2MVx5bS42SBTgA+4wBnscn1pq6bbvp7xXADQvOySEOWVATxg9s846Y6elZRprqOU2aXnWWr3KErbR3YBQWr5DJ6lHBxjjv6cgEZqCz0+1+zXUkl3CrM3llmTzCGHf5TjBHBIPYn1qezm07T45bGe3+1xM2Em8rb82PusVGQcdyPX0NZj2d42ov58KyWcxIt2U8qyjOCVx8w5xkc/nXZCHN0OSpV5VqypqMsdvpkVle3k1pGx3w3Eah0jPYCTcdue4NcZNfXY0ee2vHhmeCUzKFLOzgcMyttwOuPQ55rRu/Et5YXrael3G+SWms5oGFtkcoSrr1PtyCD1qvea/azQiY21oJM7nGmyC3YMep24wOcZI+UdxiupU7aHnyq3fNY5y7aC/1A2MS+ZvULukdvkdckDrlcrkc5xn0FQ63IkGmxTPLPsKjZuIyki8bT2II/xpgn095zd2pnjbAdTMuJA5/vEcfl2zis6APqmuskx/dpiSX+6e4A985pV6ipxDD0nUncfFH9ls3uggE1w2fmGCFrW0m0SCwa4IBL/dz6VUit5NW8RJbRj92nzOw6BR3ra1Qi1tZEiGEVdq8dK8WcnJnv048qKfhmza91a7usZCuEU+w61yHxy1+KFbXwnZOd5xc3eD2/gU/q34Cu/wBMu7Twr4CuNb1HOyKNp2A4LEn5VHuSQPxr5o1jU7vW9cu9Xv333NzKZH64BJ4A9gMAewrvy7D+0q+0ey/M4cyxPs6Sprd/kZyLvOQOlPmKqu3qpOSR1FWoowIyZBtI54GKpT/xl93/AAE8V9DY+cPos0Y4pxApa5gGKPmFKvLEmnDqfpSAc0mUPQZYD3qGf/XtxxmrMIAcZ6VWky2c/WokVEpA5k/GlkHPXNOC8ZxRJ95RWZoPReNwHFTRqMfrSRqfTIqdUBJ9higLkDglgBzU8CHy2OOpppT99gGlurqDS9Jm1G8k2Qwruc9z7D3PSnYVzH8YeI4/D2jrHCym/ucrCpP3B3c+w/nXhaStLNNI5LkMSSTyT1Na+tavca/rs2pXJZTI2ETORGg6KPw/Wsm2GFmdOCZSP6f416FKnyLzMJSuyq6NJIq5Jbqcep5pblSZkiz9xeh9asW677iSU44GfaoghkuHlwNxOQKpoSFeNTbYOPr71TulzcBOyYH41ojBJ3fdHzYPTFUIE82VnZQQzHg9qloEzrvAfjrUfAuoPLbOqW84aOVtvzKrAZIPpkA4xzgV9oeCPFGmeLFaXTLqKUbYwsKkhZCU3FjnHy8qOe4PFfn7qTkERJ1A5rtPhb8QdS+G/ia31GAzT2bSKbi0V9ofHAPvjOccA8Z4rKSuWnY+9jpdrdrdWJSKcJHvkcnAH93A9Tg47jFUbkTi1uI40gitYF3KN3L4BHIHUDaePfFWrkT6hpE99p95H5d1B9pd1y7sNi/Kv90E85xkjOMDk0rbTp/tzvAUlucI/wBmUkHkHCk55Ibdx06V5NanaWp7mFrc0TP0rRbldUULiOJIckvHgIzjJ2k98knGTjOOOa07O90u/na2v4828MIDM0mXDZ7HOSAccep9qJZLiPw9bqgH2hGMcoU5Znzx17kHJ9DWO2lSabqkuotu/eSmRraQAA7QAWVj1OSPlI6k+lcjV7tnoqSVkjatTYaTq1w8yyy+eCFkYqyKgAG0Lzk9MkirFzLNcvJMv2eXy3WeISgrucehXqRngehxWBp1ol5JNePFEse9JEMi7BG2QCeM++T2A9+OgnAS7jtQxkA23nnRjKkKUOSOgxgA5x2NTFdbl87+Er30UclnJc2KyR3NvtcrJnBjJ+7+vHbkGue1FnUILFLV45N0VxGrbS8YIxIe3y5+o684rsdZa2lXfbS28MdxN+/dCflZlwxIJ6DCnaMdT6VzLSLbQXCu0QZGRokKjLEsFJU4yOfpkA9+vVThr5HBXqK3mUX1O6SzRbaSKWNgIZprtA53jPBI/i9GxzwcVQuXLX2yxzeXzr5klszBhJjgqDldxAOf/wBVWbWGyuJblpLZpBcP5MtpDcAS7wcb0PALAg5Xoc/jXOeMdchskWSH7QNUh3DzFtw5mVcBWKlsqegOCfu4966qMLK7POxE9eVGHq97o5l+1TQXkb7ioQoxkjwcMg5wRnBA4PH0rkNXMer6jaXFrcrcRxJ88ix/vM7iBvxypC4B/rWRJrGpa5PcEyzzLMSspnkYMQe+QcHt1zW7ZaRFb2cd6jEM4KnJIdtp7n+IYPWnUqJK5FKk5Ow65iCy/YoAJVA2qV+bcMkqM+nJ+lXGgXSbAq7AzlfnI7n/ADxWpploLcPqVxwzr8gbqB7+9S6NpL63q731wCbK2OT/ALbdlH8zXj1q3PI9zD0eSKXUs6DpZ07TRcXOftFwA7j0HZagvopb2+S2A/1jdPQVv3BaS4Zedg6Z9q53xLrMfhXwrd+IJwPtGPKtIz/FIen4d/oKyhFykkt2dNTlhG76HnHxi8VfaNSj8IWDKbSzIa5IP3pAOF+ig/mfavL4IDLKQTg44+tOuJpJrmS4nlZ5ZmLuzHlmJySfxqxFHttxIQWdTyv8q+sw2HVKCgj5HE13Wm5sjuiCqx4PHX/P61UaFnlGFDDPOe5q4QTukOCTzkd/pVeaRYIJFbcc8nnp+NdLRzn0HRR0orhKD+E0DrQT8g9zR3oGiVeFdh2U1TfjNXM4t298Cqlw2GC1lI0iMJxwM9aaqGSc/WnknywOx5plv807HJGDUFFtVznnvipUwWb60xF2jIPfNOhGVJqhAF+YnvjNeZ/ErxC1zfp4ftWzDbYecqeHk6gH2UfrXd+JNZXw/wCGLrUCR5uPLhU8guen+NeEtJJNO8ruzsx3Fj1JPOa6cPTu+ZkTfQIgMlAeRznFV7MlYbsEYxIQPyqwrBbtQ3Abvmo4Y2V7tFUf6wHPsRXZ1MhtvGfsjlmJycYxQsQRcZw3vVlI9tsmSWBJIJpCp4GO3OKYFSf93ZO5GT930pLZVjtd2FBwDz2p2oZYRQj72dx/z+FLcoYrFPvDcM49jUPcDNMZlm3EE5qW+XyrcAEAkcc1KqETxj9VNJfKZLlYht6Yx/Os2ikfRn7PPxh/s6FvB3iC6vLq81i7WKGZvmZt2BtLHpu2onryxr6HkTT7a6jGh6j51yN8wcygCR1J2x7ue+eK/PASTWd1HcWkrwzRMDHJGcMrDuPevoD4HeONYunuNLvAtymmwRTwSPywVWAKZPXO0H6k1y4iMVHmkdGHlPm5YdT6buAn9itILV1nj/eSjAO9goBRR25UZ9hjvVfU4b6TTRqhjgnt5NlypJ2tE5GDhT64Y49MmuJtPiX9jnu2uZpfs6MQ08ce52iUBjwepAYr7gcVqv450O81FLS21KIRH5tq43vhcFgD0OEABwf4u3Xl9jB+8mdn1ma92SNhRHc68JZw1nGCVeNhsEz7QQG5467Tk4IYmtgJdWjX9tCizNNaH51AyqMoIP4HHTsD6CuOXxJp1jFJFDqZuVDiXlFVwpxlSp65DcHvyDikb4jaFA5aUSeWjSSJuyssKEchemdu9gAR0OOtTGgr3Zc8XpaIup6pbBibeUzfdbkBCxXggH+8N3B77cd+Mm9vpzqTXt2IJSwdbm3AK8gFldQAemQT0PzcdKxdR8XaZFN5GnXD3FpBIZYJ4oMghuxz6Nng8YzXJ6941u73yrtFhDbQAqDYcgcA9weW4Jxiq9ynuzGTqVXsdFqmtkZu4J7CGTzPLuWD7vJduA7K3O1iTlh8pH4ivLtZ8QXfiXUUXVYxEkEx2iPLqrjqFcEcZBI9c96fqiNquprdXEskdw6Jt2n6DAX3AGT7ZrV0rQ/3yQJGHdhy23hR/TB6fWuepilstjop4V7vctWGjxWxMNtvQTruMgbBwcccduvFbQ06OSQS+XiLO5z/AHznn6A9eOK07bSpFYNMQLdlJAHBcg/oOlLeSSTXS2NjGXeTARVHXj/P5V51Wu5uyPUo4dQV3uU3gvNb1WLTLRMAnJIHCr6mu7On2+laLHY2w2qoxz1Y9zVvQtGi0HSyzASXkoBlk/oPYU+ZGuJhu5IrklO7sjvp07K7Oe+ztI6xgZLcYH8q+dfil4r/AOEj8YNZWchbT9OzDCVPDsDh3/E8D2HvXsHxg8XDwt4Y/suwm26pqKNEhU4MUXR3+v8ACPfPpXzOVJAjX6nvivfyrDX/AHsvkeBm+JV/Yx+YQxiSUnaSB29ak/10gjzuyeTnp/8AWqQ/uLcswYYHU9+340y0VmcNncD+OAOte+lY8G5K6iCPMhCjsduCKyAWvNTCqNyKcnjrV7UJt0A2j5nOFbI+an6daLHAJHYBs+vPrSauwPecmkJFNzRk1wjJM/dHtS1GxPmED6U/PpQA6TiFMdzmqpGZOmallJ3qB2Wo4yPPOfSspbmqHMADnGABSWiEFiw4PSlc5znFFtnbnOQaQy5geV15PanxIQmCOTUfUBR3ql4m1hdB8M3N+MGVV8uFfVzwP8fwppXdkFzzT4ha7/aWvjS4CDbWZIJzw0n8R/Dp+dcfwMHgDpS73bzJHJLE5LHnJ6mlGGQ4x6/T3r04R5YpGDd9SKfI2zKAcHJ9qlC4uJ5FXKvGrcH/ADxTMLsKkYzwMVPbgNBjG4qu08e/FUIkjDGCMMwAAzTGTdIF65PSp4wRENp6CmMwXfKCSV6DHU02gKDj7Rq7BfuA4PtinX4L36RqOB6HtipbGHEjyMuS7bicelMXL3zynGQOuelTYCIJm6D5Ix3HaoVjLXyMQcKMmrwUbHnPJI25PFQW4z5jnsD+JpOI0QlQQOMjOee9e0/s6Wwn8T61F1Js0I/77Oa8ax8g6/UV7r+zEyN8StSs2X/XWBwPdWBrzsxX7iR3Zf8A7xE63XtMNhrDCRW+zy9xwR7g9qy7rSLEhC2baYKV3R8Kc8bgPp26V6v410dJtMlIQbkziuJ0y3i1XSzZTYE8ZwrdxXzVPEygtD6WrhITeqOauNIuZraMhGDxg7HLbgMrtIznpjt7VZg0i5mQxXSKxJB3A9RjkHPvV+50+9s5NrZGOhxwatadDMZAHBLDn1pzxtRoVPAU10Irbw+0ULFofvjaxU9f84FQf8IlCz+Ykcgz1I/rXWqzjCt8vHGexq3HJMLdlSMAk9euTXL7eT3Z1rCwWyORh8Kxrceb5CEqQA5Xp9K6Wz0m1s7YsyKzE53e9XkjAOSOgx/+uq94+FSGHLyNwqKOTUOpKRqqUYozdTuGZ0s7dDLKzfKAMkk10Hh7w9HpEYurgpLfSD5m7R/7Ip2jaMtk5nmxJdMOX7J7CttiFwrfMM46d6JTtogjTu+ZkT73bn14x2ovJLLRPDd3rWpTLFbW8TSyO3YAZ/PsB61o2VmZpgNufXAr51/aG+In9r61J4D0iZfsFhKDezRnIllA4QEdlyc+rfSunBYaWIqKK2OfHYqOHpuT36Hkni3xLeeL/GV3rt2GUzNiCDOfKjH3V/AfqT1rNihztJHOcHPHNJHCdylWHI+UmppiI4CowcgHJ6Yz0r7alTUEktj4epNzk5S3ZUmYTXIXZuCjuTjHf8alkKxW20AKSOg4x7VJBDmMykZ56Z56etZt/O8hWJMlm644wPWtGyCOPN5eFicKnAB4Gc8/1rYBEcJbcDhRt+b0/wAKpWqiKNRtbB4B9amunEUBVsADuOKaVgPbc+9AOXH1plOT/WCuEoduLSFvU08HtUKmpV5IzSYDZWzN9OKRASzNTCT5557mnKThvrWUtzVD2IwakhUIdo5xUDn5amjJ3LUjLqDNygHWvJ/iL4ii1fVE02ycNb2jNmReQ8nQkew6fnXoPie5ns/B+qXVtIY5o7ZirjqO39a8JQDAHoBiurDwv7zM5sdAVcEHgdye1DbkJJ5B6e9RY23bY7jn86sEnypFzwAcV2GYjKOB0DDIPvSWoxcTx4527seuKVudM3HqvIPoaU/8fhbuYmJ/SmBciOIQdp5zz3/Co5irRuFI+Yj8OKsWwBiUkZNQSMSmCeMkVTWgluNjAis2Z15AzuHUiobcILeRiNxJqxdoqwFFXA2g4/Oq0Y/0DPfAqWhj5/3dkgA5PJ/GoI4/9CdgT6/XNWLoDDDtuoVQLVwBwMfypAVQATyvO3pXqv7PeoHTvjfpxZgomSSI5HYjP9K8rDFVYg89K7P4XyPF8VdEaNip+0AZH+6a48bG9KS8jqwj5a0X5n2v4lttwmi7MucjvXj5tp7LVpGjyDmvata+ZI2bkmEc/hXmWpxp/bB+Udq+KejsfbR1SGnUEmtgLiNZOOSeopLe2ikuVazOCRyjH+VR3UaCzBC4OBUGkM32lWzzuIzUNGqOrWx3xhvLIOamOnT7SViYj2FaFuxxHVyVmF3GoJwUY47Vhdm/Ics9hfO5VSkC993J/CrVlp8FuxZAdzfekc5Jq6SWncscnNInzKS3JzSc2HIidWVQFweOcCpbOGS4mHG3np6CqIJ+0lc8Y6V0umIq2pYKM7Sc/hThq7Cm7K55v8Z/iXB4D8JHQNGnWTxFqURRMYP2WI8GRvQnovvz0FfISRmRmDncc7mJ5LE+vqTWt4m1TUNY8b6xqep3T3N3JcuGlfqQGZQPQABVAA9KqD5pQhA24HGPp/ia+7y7BxoU7Ld7nwePxcsRUbey2HRJs+c4Udj2+lVpEaWQEjOT0A6H1q5c8I2Pp+lV2JUKASM5J/OvRscA2fbDZsnKkjH0rEtk8y6aZh8o5A71qar/AKsjJw2AeetRWSqLFTgcsc0rXYEoRixwDweh7068i3WSqGJGTtI55pVzmVMnauMDPSppUXyCefu7uvfFMD//2Q=="
+               alt="M. Lahouel Kémal Mabrouk — KLM Croisières Skikda"
+               style="width:100%;height:auto;display:block">
+        </div>
+        <div style="margin-top:12px;font-family:var(--serif);font-size:14px;font-weight:700;color:var(--navy)">Skikda, Algérie</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Port de départ · Méditerranée Est</div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:32px;padding:24px 28px;background:var(--sand);border-radius:12px;border-left:4px solid var(--teal);max-width:680px">
+      <p style="font-family:var(--serif);font-size:17px;font-style:italic;color:var(--navy);line-height:1.7;margin-bottom:8px">
+        « L'Algérie a une mer. Peu de gens l'ont vue. KLM Croisières est né pour changer ça — depuis Skikda, depuis la mer. »
+      </p>
+      <p style="font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em;text-transform:uppercase">M. Lahouel Kémal Mabrouk · Gérant fondateur</p>
+    </div>
+  </div>
+</section>
+
+<section id="confidence">
+  <div class="wrap">
+    <div class="sec-eyelet">Notre engagement</div>
+    <div class="sec-h2">Sécurité, confort et technologie.</div>
+    <p class="sec-lead">Chaque sortie KLM Croisières est encadrée par des standards de sécurité stricts, à bord de yachts modernes propulsés par des technologies propres, avec un équipage chaleureux et à l'écoute.</p>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <div class="trust-title">Énergie propre · Sea Expandary</div>
+        <div class="trust-text">Propulsion hybride et électrique. Énergie solaire et éolienne. Zéro émission côtière. Navigation silencieuse, zéro vibration. Partenariat Sea Expandary (Shenzhen, 700 M$).</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div class="trust-title">Sécurité certifiée</div>
+        <div class="trust-text">Bateaux régulièrement entretenus et conformes aux normes maritimes. Gilets de sauvetage, matériel de secours, équipage formé. Votre sécurité est notre priorité absolue.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤖</div>
+        <div class="trust-title">Intelligence artificielle à bord</div>
+        <div class="trust-text">Navigation assistée par IA pour une gestion optimale de la route, de la météo et de la consommation. Plus de confort, plus de fluidité, plus de sérénité pour vous.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🍽️</div>
+        <div class="trust-title">100% Halal à bord</div>
+        <div class="trust-text">Tous nos repas et boissons sont certifiés halal. Cuisine préparée avec les produits frais du littoral algérien. Menus personnalisables selon les régimes alimentaires.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">👨‍✈️</div>
+        <div class="trust-title">Équipage expérimenté</div>
+        <div class="trust-text">Capitaine et membres d'équipage formés et passionnés. Accueil chaleureux, disponibilité totale, service attentionné pour toute la famille.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🌿</div>
+        <div class="trust-title">Respect de l'environnement</div>
+        <div class="trust-text">Engagement fort pour la préservation du littoral algérien. Aucun rejet en mer, matériaux écoresponsables, sensibilisation à la faune marine à bord.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ITINÉRAIRES ══ -->
+<section id="itineraires">
+  <div class="wrap">
+    <div class="sec-eyelet">Nos itinéraires</div>
+    <div class="sec-h2">Quatre façons de vivre la côte Est algérienne.</div>
+
+    <div class="iti-list">
+      <div class="iti-item">
+        <div class="iti-code" style="background:var(--teal)">KLM<br>1</div>
+        <div class="iti-info">
+          <div class="iti-name">Les Criques de Skikda · Sunset</div>
+          <div class="iti-stops">Skikda · Stora · Ain Zouit · Baie des Cocos · Cap de Fer · Chetaïbi</div>
+        </div>
+        <div>
+          <div class="iti-price">5 000–8 000 DA</div>
+          <div class="iti-duration">4 à 8 heures</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:#1B6A3E">KLM<br>2</div>
+        <div class="iti-info">
+          <div class="iti-name">La Côte Romaine ★ UNESCO</div>
+          <div class="iti-stops">Skikda · Annaba (Hippone) · Jijel · Béjaïa · Alger · Tipaza</div>
+        </div>
+        <div>
+          <div class="iti-price">550–750 €</div>
+          <div class="iti-duration">5 jours · 4 nuits</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:#7F77DD">KLM<br>3</div>
+        <div class="iti-info">
+          <div class="iti-name">Andalousie & Retour</div>
+          <div class="iti-stops">Alger · Alicante · Valence · Barcelone</div>
+        </div>
+        <div>
+          <div class="iti-price">Sur devis</div>
+          <div class="iti-duration">8 jours</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:var(--gold)">KLM<br>4</div>
+        <div class="iti-info">
+          <div class="iti-name">Méditerranée Latine · Boucle</div>
+          <div class="iti-stops">Skikda · Marseille · Ramatuelle · Nice · Ajaccio · Sardaigne · Skikda</div>
+        </div>
+        <div>
+          <div class="iti-price">1 200–1 800 €</div>
+          <div class="iti-duration">10 jours · boucle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA RÉSERVATION ══ -->
+<section id="cta">
+  <div class="cta-eyelet">Réservez votre expérience</div>
+  <div class="cta-h3">Votre prochaine sortie en mer commence ici.</div>
+  <div class="cta-sub">Contactez-nous par le canal de votre choix. Réponse en moins de 2 heures.</div>
+  <div class="cta-gold-line"></div>
+
+  <div class="contact-cards">
+
+    <!-- Téléphone cliquable -->
+    <a href="tel:+213555276913" class="contact-card" title="Appeler KLM Croisières">
+      <span class="contact-card-icon">📞</span>
+      <div class="contact-card-label">Téléphone / هاتف</div>
+      <div class="contact-card-value">+213 (0)5 55 27 69 13</div>
+      <div class="contact-card-sub">Appel direct</div>
+    </a>
+
+    <!-- WhatsApp cliquable -->
+    <a href="https://wa.me/213555276913?text=Bonjour%20KLM%20Croisi%C3%A8res%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie%20en%20mer%20depuis%20Skikda." target="_blank" rel="noopener" class="contact-card" title="WhatsApp KLM Croisières">
+      <span class="contact-card-icon">💬</span>
+      <div class="contact-card-label">WhatsApp / واتساب</div>
+      <div class="contact-card-value">Écrire sur WhatsApp</div>
+      <div class="contact-card-sub">+213 (0)5 55 27 69 13</div>
+    </a>
+
+    <!-- Email cliquable -->
+    <a href="mailto:kimcroisieres@gmail.com?subject=Réservation%20KLM%20Croisières&body=Bonjour%2C%20je%20souhaite%20réserver%20une%20sortie%20en%20mer.%0A%0ANom%20:%0ADate%20souhaitée%20:%0ANombre%20de%20personnes%20:%0AFormule%20choisie%20:%0A%0AMerci." class="contact-card" title="Email KLM Croisières">
+      <span class="contact-card-icon">✉️</span>
+      <div class="contact-card-label">Email / البريد</div>
+      <div class="contact-card-value">kimcroisieres@gmail.com</div>
+      <div class="contact-card-sub">Réponse sous 2h</div>
+    </a>
+
+    <!-- Formulaire de contact intégré -->
+    <a href="#contact-form" class="contact-card" title="Formulaire de contact" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;">
+      <span class="contact-card-icon">📋</span>
+      <div class="contact-card-label">Formulaire / نموذج</div>
+      <div class="contact-card-value">Formulaire de contact</div>
+      <div class="contact-card-sub">Remplir en ligne</div>
+    </a>
+
+  </div>
+
+  <p class="cta-note">رحلات ك.لا.م للرحلات البحرية في البحر المتوسط — هرب إلى البحر، واعثر على الهدوء، والراحة، واكتشاف ثقافي.</p>
+</section>
+
+<!-- ══ FORMULAIRE DE CONTACT ══ -->
+<section id="contact-form" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="sec-eyelet">Formulaire de réservation</div>
+    <div class="sec-h2">Réservez votre sortie en mer.</div>
+    <p class="sec-lead">Remplissez ce formulaire et nous vous répondons dans les 2 heures. Toutes les sorties sont personnalisables selon vos envies et votre groupe.</p>
+
+    <form id="reservation-form" style="max-width:600px"
+          onsubmit="handleSubmit(event)">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Nom complet *</label>
+          <input type="text" name="nom" required placeholder="Votre nom et prénom"
+                 style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Téléphone *</label>
+          <input type="tel" name="telephone" required placeholder="+213 ..."
+                 style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Email</label>
+        <input type="email" name="email" placeholder="votre@email.com"
+               style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+               onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Formule souhaitée *</label>
+          <select name="formule" required
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;appearance:none;cursor:pointer">
+            <option value="">Choisir une formule</option>
+            <option>Le Coucher du Cap (4h sunset)</option>
+            <option>Les Criques de Stora (journée)</option>
+            <option>La Nuit en Méditerranée (24h)</option>
+            <option>Mini-croisière familiale</option>
+            <option>La Côte Romaine ★ (5 jours)</option>
+            <option>Privatisation · Événement</option>
+            <option>Autre / Sur mesure</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Nombre de personnes *</label>
+          <select name="personnes" required
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;appearance:none;cursor:pointer">
+            <option value="">Combien de personnes ?</option>
+            <option>1 – 2 personnes</option>
+            <option>3 – 4 personnes</option>
+            <option>5 – 6 personnes</option>
+            <option>7 – 10 personnes</option>
+            <option>11 – 12 personnes (max)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Date souhaitée</label>
+        <input type="date" name="date"
+               style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+               onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+      </div>
+
+      <div style="margin-bottom:24px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Message / demande particulière</label>
+        <textarea name="message" rows="4" placeholder="Régimes alimentaires, accessibilité, occasion spéciale, questions..."
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;resize:vertical;transition:border-color .2s"
+                  onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'"></textarea>
+      </div>
+
+      <button type="submit"
+              style="width:100%;padding:16px;background:var(--navy);color:var(--white);border:none;border-radius:10px;font-size:16px;font-weight:700;font-family:var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .2s,transform .2s"
+              onmouseover="this.style.background='var(--teal)'" onmouseout="this.style.background='var(--navy)'"
+              onmousedown="this.style.transform='scale(.98)'" onmouseup="this.style.transform='scale(1)'">
+        Envoyer ma demande de réservation
+      </button>
+
+      <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:rgba(27,122,74,.1);border:1.5px solid var(--teal);border-radius:8px;text-align:center;font-size:14px;color:#1B7A4A;font-weight:700">
+        ✅ Merci ! Votre demande a été envoyée. Nous vous contactons dans les 2 heures via WhatsApp ou téléphone.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+
+<!-- ══ QR CODE & DOMAINE ══ -->
+<section id="qrcode" style="background:var(--navy);padding:64px 0">
+  <div class="wrap" style="text-align:center">
+    <div class="sec-eyelet" style="color:var(--teal)">Accès rapide</div>
+    <div class="sec-h2" style="color:var(--white)">Scannez et réservez.</div>
+
+    <div style="display:flex;justify-content:center;gap:48px;flex-wrap:wrap;margin-top:32px;align-items:flex-start">
+
+      <!-- QR Code généré via canvas JS -->
+      <div>
+        <div style="background:var(--white);border-radius:16px;padding:20px;display:inline-block;box-shadow:0 8px 32px rgba(0,0,0,.3)">
+          <canvas id="qr-canvas" width="200" height="200"></canvas>
+        </div>
+        <div style="margin-top:12px;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)">Scannez pour visiter le site</div>
+        <div style="margin-top:4px;font-size:13px;color:var(--teal);font-family:var(--serif);font-style:italic">klm-croisieres-dz.github.io</div>
+      </div>
+
+      <!-- Infos domaine -->
+      <div style="text-align:left;max-width:340px;padding-top:8px">
+        <div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--white);margin-bottom:16px">Votre site en ligne</div>
+        
+        <div style="margin-bottom:14px;padding:14px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px">Adresse du site (gratuite)</div>
+          <a href="https://klm-croiseres-dz.github.io/KLM-Croiseres.dz/" target="_blank" style="color:var(--teal);font-size:13px;font-weight:700;word-break:break-all;text-decoration:none">klm-croiseres-dz.github.io/<br>KLM-Croiseres.dz/</a>
+        </div>
+
+        <div style="margin-bottom:14px;padding:14px 18px;background:rgba(184,132,30,.1);border:1px solid rgba(184,132,30,.25);border-radius:10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px">Domaine personnalisé recommandé</div>
+          <div style="color:var(--white);font-size:15px;font-weight:700">klmcroisieres.com</div>
+          <div style="color:rgba(255,255,255,.5);font-size:12px;margin-top:4px">~10–15 €/an sur Namecheap ou OVH</div>
+          <div style="color:rgba(255,255,255,.4);font-size:11px;margin-top:3px">→ À connecter à GitHub Pages en 5 min</div>
+        </div>
+
+        <div style="padding:14px 18px;background:rgba(26,143,186,.1);border:1px solid rgba(26,143,186,.25);border-radius:10px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:6px">Note sur .dz</div>
+          <div style="color:rgba(255,255,255,.7);font-size:12px;line-height:1.6">Les domaines <strong style="color:var(--white)">.dz</strong> sont gérés par le CERIST (Algérie). Ils nécessitent un dossier officiel et ne sont pas gratuits. Le domaine <strong style="color:var(--white)">.com</strong> ou <strong style="color:var(--white)">.net</strong> reste la meilleure option accessible.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+// Générer le QR code en canvas sans bibliothèque externe
+// Encode l'URL en QR code Version 2 (25x25 modules)
+(function() {
+  const canvas = document.getElementById('qr-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const size = 200;
+  const url = 'https://klm-croiseres-dz.github.io/KLM-Croiseres.dz/';
+  
+  // Utiliser l'API QR de Google Charts (fonctionne sans JS complexe)
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = function() { ctx.drawImage(img, 0, 0, 200, 200); };
+  img.onerror = function() {
+    // Fallback : dessiner un QR code stylisé avec le texte
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, 200, 200);
+    ctx.fillStyle = '#071E3D';
+    // Finder patterns
+    const fp = (x, y) => {
+      ctx.fillRect(x*8, y*8, 56, 56);
+      ctx.fillStyle = 'white'; ctx.fillRect(x*8+8, y*8+8, 40, 40);
+      ctx.fillStyle = '#071E3D'; ctx.fillRect(x*8+16, y*8+16, 24, 24);
+    };
+    fp(0,0); fp(17,0); fp(0,17);
+    ctx.font = 'bold 9px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('KLM Croisières', 100, 110);
+    ctx.font = '7px Arial';
+    ctx.fillStyle = '#1A8FBA';
+    ctx.fillText('Scannez avec votre', 100, 125);
+    ctx.fillText('appareil photo', 100, 137);
+  };
+  img.src = 'https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=' + encodeURIComponent(url) + '&choe=UTF-8';
+})();
+</script>
+
+
+<!-- ══ GÉRANT FONDATEUR ══ -->
+<section id="gerant" style="background:var(--white)">
+  <div class="wrap">
+    <div class="sec-eyelet">À propos du fondateur</div>
+    <div class="sec-h2">M. Lahouel Kémal Mabrouk
+      <br><span style="font-size:.6em;font-weight:400;color:var(--teal);font-style:italic">
+        Gérant fondateur · SARL KLM Croisières Méditerranée
+      </span>
+    </div>
+    <p class="sec-lead">
+      Entrepreneur algérien passionné par la mer et le développement durable,
+      M. Lahouel Kémal Mabrouk fonde KLM Croisières avec une vision claire :
+      révéler la Méditerranée algérienne depuis la mer, pour tous ceux qui ne l'ont
+      jamais vue. Fort d'un réseau personnel ancré dans la région de Skikda et d'un
+      partenariat stratégique avec Sea Expandary (Shenzhen, 700 M$), il construit
+      le premier opérateur de mini-croisières durables de la côte Est algérienne.
+    </p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;
+                max-width:700px;margin-bottom:32px">
+
+      <div style="text-align:center">
+        <div style="border-radius:16px;overflow:hidden;
+                    box-shadow:0 8px 32px rgba(7,30,61,.18);
+                    border:3px solid rgba(26,143,186,.25)">
+          <img src="https://raw.githubusercontent.com/KLM-Croiseres-dz/KLM-Croiseres.dz/main/portrait_officiel.jpg"
+               alt="M. Lahouel Kémal Mabrouk — Gérant fondateur KLM Croisières"
+               style="width:100%;height:auto;display:block">
+        </div>
+        <div style="margin-top:12px;font-family:var(--serif);font-size:15px;
+                    font-weight:700;color:var(--navy)">Gérant fondateur</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">
+          SARL KLM Croisières Méditerranée
+        </div>
+      </div>
+
+      <div style="text-align:center">
+        <div style="border-radius:16px;overflow:hidden;
+                    box-shadow:0 8px 32px rgba(7,30,61,.18);
+                    border:3px solid rgba(184,132,30,.25)">
+          <img src="https://raw.githubusercontent.com/KLM-Croiseres-dz/KLM-Croiseres.dz/main/portrait_casual.jpg"
+               alt="M. Lahouel Kémal Mabrouk — KLM Croisières Skikda Algérie"
+               style="width:100%;height:auto;display:block;
+                      object-fit:cover;max-height:400px">
+        </div>
+        <div style="margin-top:12px;font-family:var(--serif);font-size:15px;
+                    font-weight:700;color:var(--navy)">Skikda, Algérie</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:3px">
+          Port de départ · Méditerranée Est
+        </div>
+      </div>
+
+    </div>
+
+    <div style="padding:24px 28px;background:var(--sand);border-radius:14px;
+                border-left:4px solid var(--teal);max-width:700px">
+      <p style="font-family:var(--serif);font-size:18px;font-style:italic;
+                color:var(--navy);line-height:1.7;margin-bottom:10px">
+        « L'Algérie a une mer. Peu de gens l'ont vue.
+          KLM Croisières est né pour changer ça — depuis Skikda, depuis la mer. »
+      </p>
+      <p style="font-size:12px;font-weight:700;color:var(--teal);
+                letter-spacing:.08em;text-transform:uppercase">
+        M. Lahouel Kémal Mabrouk · Gérant fondateur · KLM Croisières Méditerranée
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QR CODE & DOMAINE ══ -->
+<section id="qrcode" style="background:var(--navy);padding:64px 0">
+  <div class="wrap" style="text-align:center">
+    <div class="sec-eyelet" style="color:var(--teal)">Accès rapide</div>
+    <div class="sec-h2" style="color:var(--white);margin-bottom:36px">
+      Scannez et réservez.
+    </div>
+
+    <div style="display:flex;justify-content:center;gap:52px;
+                flex-wrap:wrap;align-items:flex-start">
+
+      <!-- QR Code généré automatiquement -->
+      <div>
+        <div style="background:var(--white);border-radius:18px;padding:18px;
+                    display:inline-block;box-shadow:0 8px 40px rgba(0,0,0,.35)">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https%3A%2F%2Fklm-croiseres-dz.github.io%2FKLM-Croiseres.dz%2F&color=071E3D&bgcolor=FFFFFF"
+               alt="QR Code — Site KLM Croisières Méditerranée"
+               width="200" height="200" style="display:block">
+        </div>
+        <div style="margin-top:14px;font-size:11px;font-weight:700;
+                    letter-spacing:.12em;text-transform:uppercase;
+                    color:rgba(255,255,255,.45)">Scannez avec votre téléphone</div>
+        <div style="margin-top:5px;font-size:14px;color:var(--teal);
+                    font-family:var(--serif);font-style:italic">
+          klm-croiseres-dz.github.io
+        </div>
+      </div>
+
+      <!-- Info domaine -->
+      <div style="text-align:left;max-width:360px;padding-top:8px">
+        <div style="font-family:var(--serif);font-size:22px;font-weight:700;
+                    color:var(--white);margin-bottom:18px">Votre site en ligne</div>
+
+        <div style="margin-bottom:14px;padding:16px 20px;
+                    background:rgba(255,255,255,.06);
+                    border:1px solid rgba(255,255,255,.14);border-radius:12px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;
+                      text-transform:uppercase;color:rgba(255,255,255,.4);
+                      margin-bottom:7px">Adresse gratuite (GitHub Pages)</div>
+          <a href="https://klm-croiseres-dz.github.io/KLM-Croiseres.dz/"
+             target="_blank"
+             style="color:var(--teal);font-size:13px;font-weight:700;
+                    word-break:break-all;text-decoration:none">
+            klm-croiseres-dz.github.io/KLM-Croiseres.dz/
+          </a>
+        </div>
+
+        <div style="margin-bottom:14px;padding:16px 20px;
+                    background:rgba(184,132,30,.12);
+                    border:1px solid rgba(184,132,30,.28);border-radius:12px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;
+                      text-transform:uppercase;color:rgba(255,255,255,.4);
+                      margin-bottom:7px">Domaine personnalisé recommandé</div>
+          <div style="color:var(--white);font-size:16px;font-weight:700">
+            klmcroisieres.com
+          </div>
+          <div style="color:rgba(255,255,255,.5);font-size:12px;margin-top:5px">
+            ~10–15 €/an · Namecheap ou OVH · SSL inclus
+          </div>
+          <div style="color:rgba(255,255,255,.35);font-size:11px;margin-top:3px">
+            → À connecter à GitHub Pages en 5 minutes
+          </div>
+        </div>
+
+        <div style="padding:16px 20px;background:rgba(26,143,186,.1);
+                    border:1px solid rgba(26,143,186,.28);border-radius:12px">
+          <div style="font-size:10px;font-weight:700;letter-spacing:.15em;
+                      text-transform:uppercase;color:rgba(255,255,255,.4);
+                      margin-bottom:7px">Note domaine .dz</div>
+          <div style="color:rgba(255,255,255,.72);font-size:13px;line-height:1.65">
+            Les domaines <strong style="color:var(--white)">.dz</strong> sont gérés
+            par le CERIST (Algérie) et nécessitent un dossier officiel auprès des
+            autorités compétentes. Le domaine
+            <strong style="color:var(--white)">.com</strong> ou
+            <strong style="color:var(--white)">.net</strong> reste la meilleure
+            option accessible immédiatement pour KLM Croisières.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<footer id="page-footer">
+  <div class="footer-brand">KLM Croisières Méditerranée</div>
+  <div class="footer-slogan">L'Algérie vue de la mer.</div>
+  <div class="footer-links">
+    <a href="#introduction">Présentation</a>
+    <a href="#services">Formules</a>
+    <a href="#territoire">Le territoire</a>
+    <a href="#itineraires">Itinéraires</a>
+    <a href="#contact-form">Réserver</a>
+    <a href="tel:+213555276913">+213 (0)5 55 27 69 13</a>
+    <a href="mailto:kimcroisieres@gmail.com">kimcroisieres@gmail.com</a>
+  </div>
+  <div class="footer-copy">© 2026 SARL KLM Croisières Méditerranée · Skikda, Algérie · Tous droits réservés / جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const nom = data.get('nom');
+  const tel = data.get('telephone');
+  const formule = data.get('formule');
+  const personnes = data.get('personnes');
+  const date = data.get('date');
+  const msg = data.get('message');
+
+  // Construire le message WhatsApp
+  const waText = encodeURIComponent(
+    `Bonjour KLM Croisières 🌊\n\n` +
+    `📋 DEMANDE DE RÉSERVATION\n` +
+    `Nom : ${nom}\n` +
+    `Téléphone : ${tel}\n` +
+    `Formule : ${formule}\n` +
+    `Personnes : ${personnes}\n` +
+    `Date souhaitée : ${date || 'À définir'}\n` +
+    `Message : ${msg || 'Aucun'}\n\n` +
+    `Merci de me recontacter rapidement. 🚢`
+  );
+
+  // Ouvrir WhatsApp avec le message pré-rempli
+  window.open(`https://wa.me/213555276913?text=${waText}`, '_blank');
+
+  // Afficher le message de succès
+  document.getElementById('form-success').style.display = 'block';
+  form.reset();
+
+  // Scroll vers le message de succès
+  setTimeout(() => {
+    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 200);
+}
+</script>
+
+</body>
+</html>
