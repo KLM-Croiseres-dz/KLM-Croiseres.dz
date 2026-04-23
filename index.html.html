@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KLM Croisières Méditerranée — L'Algérie vue de la mer</title>
+  <meta name="description" content="KLM Croisières Méditerranée propose des expériences nautiques élégantes au départ de Skikda, pour découvrir la côte Est algérienne autrement, par la mer.">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap');
+
+    *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #071E3D;
+      --teal: #1A8FBA;
+      --teal-lt: #C8EBF5;
+      --gold: #B8841E;
+      --gold-lt: #FAF0DC;
+      --sand: #F7F2EA;
+      --white: #FFFFFF;
+      --ink: #1E2D3D;
+      --muted: #6B7A8D;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'Lato', 'Segoe UI', 'Tajawal', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--white); line-height: 1.65; }
+
+    /* ── HEADER ── */
+    #page-header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      min-height: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 20px 56px;
+    }
+
+    /* Illustration SVG en fond du header */
+    .header-illustration {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      width: 100%; height: 100%;
+    }
+
+    .header-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,30,61,.3) 0%, rgba(7,30,61,.75) 60%, rgba(7,30,61,.95) 100%);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+    }
+
+    .header-eyelet {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    #page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5.5vw, 64px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 10px;
+    }
+
+    #page-header h1 .ar {
+      display: block;
+      font-size: .55em;
+      font-weight: 400;
+      font-style: italic;
+      color: rgba(255,255,255,.5);
+      margin-top: 6px;
+      font-family: var(--sans);
+    }
+
+    #page-header h2 {
+      font-family: var(--serif);
+      font-size: clamp(16px, 2.5vw, 24px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    #page-header h2 .ar {
+      display: block;
+      font-size: .8em;
+      color: rgba(255,255,255,.4);
+      font-style: normal;
+      font-family: var(--sans);
+      margin-top: 4px;
+    }
+
+    .header-gold-line {
+      width: 60px;
+      height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+    }
+
+    /* ── BANDE STATS ── */
+    .stats-band {
+      background: var(--teal);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      padding: 20px 32px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.2);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-n { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--white); line-height: 1; }
+    .stat-l { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.7); margin-top: 4px; }
+
+    /* ── SECTIONS ── */
+    .wrap { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 64px 0 52px; }
+    section + section { border-top: 1px solid rgba(7,30,61,.08); }
+
+    .sec-eyelet { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+    .sec-h2 { font-family: var(--serif); font-size: clamp(24px, 3.5vw, 38px); font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
+    .sec-lead { font-size: 16px; color: #3A4A5C; line-height: 1.8; max-width: 700px; margin-bottom: 36px; }
+    .sec-lead strong { color: var(--navy); }
+    .arabic-note { font-size: 14px; color: var(--muted); margin-top: 10px; direction: rtl; text-align: right; font-style: italic; }
+
+    /* ── INTRO ── */
+    #introduction { background: var(--white); text-align: center; }
+    #introduction .sec-lead { margin: 0 auto 28px; }
+
+    /* ── ILLUSTRATION CÔTE ── */
+    .coast-illustration {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 12px 48px rgba(7,30,61,.12);
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--sand); }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .service-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(7,30,61,.07);
+      transition: box-shadow .2s, transform .2s;
+    }
+    .service-card:hover { box-shadow: 0 8px 32px rgba(7,30,61,.12); transform: translateY(-3px); }
+    .service-head { height: 90px; display: flex; align-items: flex-end; padding: 14px 18px; position: relative; }
+    .service-icon { position: absolute; top: 14px; right: 16px; font-size: 26px; }
+    .service-cat {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px; background: rgba(255,255,255,.22); color: var(--white);
+    }
+    .service-body { padding: 16px 18px 20px; }
+    .service-name { font-family: var(--serif); font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .service-text { font-size: 13.5px; color: #4A5A6E; line-height: 1.65; }
+    .service-ar { font-size: 12px; color: var(--muted); margin-top: 6px; direction: rtl; text-align: right; }
+
+    /* ── TERRITOIRE CÔTE EST ── */
+    #territoire { background: var(--white); }
+    .coast-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .coast-card {
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid rgba(7,30,61,.08);
+    }
+    .coast-head { height: 100px; position: relative; }
+    .coast-body { padding: 14px 16px 18px; }
+    .coast-name { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .coast-text { font-size: 12.5px; color: #4A5A6E; line-height: 1.6; }
+    .coast-badge {
+      position: absolute; top: 10px; left: 10px;
+      font-size: 9px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: 2px 9px; border-radius: 100px; background: rgba(255,255,255,.25); color: var(--white);
+    }
+
+    /* ── CONFIANCE ── */
+    #confidence { background: var(--sand); }
+    .trust-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .trust-item {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 20px;
+      border: 1px solid rgba(7,30,61,.07);
+      text-align: center;
+    }
+    .trust-icon { font-size: 30px; margin-bottom: 10px; }
+    .trust-title { font-family: var(--serif); font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .trust-text { font-size: 13px; color: #4A5A6E; line-height: 1.6; }
+
+    /* ── ITINÉRAIRES ── */
+    #itineraires { background: var(--white); }
+    .iti-list { display: flex; flex-direction: column; gap: 16px; }
+    .iti-item {
+      display: grid;
+      grid-template-columns: 80px 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 24px;
+      background: var(--sand);
+      border-radius: 12px;
+      border: 1px solid rgba(7,30,61,.07);
+      transition: box-shadow .2s;
+    }
+    .iti-item:hover { box-shadow: 0 4px 20px rgba(7,30,61,.1); }
+    .iti-code {
+      width: 70px; height: 70px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px; color: var(--white);
+      flex-shrink: 0;
+    }
+    .iti-info {}
+    .iti-name { font-family: var(--serif); font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
+    .iti-stops { font-size: 13px; color: var(--muted); }
+    .iti-price {
+      text-align: right; flex-shrink: 0;
+      font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--teal);
+    }
+    .iti-duration { font-size: 11px; color: var(--muted); text-align: right; margin-top: 2px; }
+
+    /* ── CTA RÉSERVATION ── */
+    #cta {
+      background: var(--navy);
+      padding: 72px 24px;
+      text-align: center;
+    }
+    .cta-eyelet { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; }
+    .cta-h3 { font-family: var(--serif); font-size: clamp(24px, 4vw, 42px); font-weight: 700; color: var(--white); margin-bottom: 10px; line-height: 1.2; }
+    .cta-sub { font-size: 16px; color: rgba(255,255,255,.6); margin-bottom: 48px; font-style: italic; font-family: var(--serif); }
+    .cta-gold-line { width: 50px; height: 1px; background: var(--gold); margin: 20px auto 40px; }
+
+    .contact-cards { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 40px; }
+    .contact-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: center;
+      min-width: 160px;
+      transition: background .2s, border-color .2s, transform .2s;
+      text-decoration: none;
+      display: block;
+    }
+    .contact-card:hover {
+      background: rgba(26,143,186,.2);
+      border-color: rgba(26,143,186,.5);
+      transform: translateY(-4px);
+    }
+    .contact-card-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+    .contact-card-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: 4px; }
+    .contact-card-value { font-size: 15px; font-weight: 700; color: var(--white); }
+    .contact-card-sub { font-size: 12px; color: rgba(255,255,255,.5); margin-top: 3px; }
+
+    .cta-note { font-size: 13px; color: rgba(255,255,255,.35); margin-top: 24px; }
+
+    /* Bouton formulaire */
+    .cta-form-btn {
+      display: inline-block;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: .04em;
+      padding: 14px 36px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background .2s, transform .2s;
+      margin-top: 16px;
+    }
+    .cta-form-btn:hover { background: #15738F; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    #page-footer {
+      background: #04111E;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .footer-brand { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+    .footer-slogan { font-size: 13px; font-style: italic; color: var(--teal); margin-bottom: 16px; }
+    .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 14px; }
+    .footer-links a { font-size: 12px; color: rgba(255,255,255,.4); text-decoration: none; transition: color .2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 11.5px; color: rgba(255,255,255,.25); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 720px) {
+      .services-grid, .coast-grid, .trust-grid { grid-template-columns: 1fr; }
+      .iti-item { grid-template-columns: 60px 1fr; }
+      .iti-price { display: none; }
+      .contact-cards { gap: 10px; }
+      .stat-item { padding: 14px 18px; }
+    }
+    @media (max-width: 500px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .coast-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HEADER avec illustration SVG côte algérienne ══ -->
+<header id="page-header">
+
+  <!-- Illustration SVG : paysage côtier algérien (falaises, mer, soleil couchant) -->
+  <svg class="header-illustration" viewBox="0 0 1440 520" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+    <!-- Ciel dégradé -->
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0a1a2e"/>
+        <stop offset="40%" stop-color="#1a3a5c"/>
+        <stop offset="100%" stop-color="#0d3558"/>
+      </linearGradient>
+      <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1a6a9a"/>
+        <stop offset="100%" stop-color="#0a3050"/>
+      </linearGradient>
+      <linearGradient id="sunGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+        <stop offset="0%" stop-color="#FFB030" stop-opacity=".7"/>
+        <stop offset="100%" stop-color="#FFB030" stop-opacity="0"/>
+      </linearGradient>
+      <radialGradient id="sunGlowRad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFB030" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#FFB030" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Fond ciel -->
+    <rect width="1440" height="520" fill="url(#skyGrad)"/>
+
+    <!-- Halo solaire -->
+    <ellipse cx="1150" cy="200" rx="220" ry="160" fill="url(#sunGlowRad)"/>
+    <!-- Soleil -->
+    <circle cx="1150" cy="200" r="52" fill="#FFB030" opacity=".85"/>
+    <circle cx="1150" cy="200" r="38" fill="#FFD060" opacity=".9"/>
+
+    <!-- Reflet soleil sur mer -->
+    <ellipse cx="1150" cy="340" rx="120" ry="12" fill="#FFB030" opacity=".22"/>
+    <rect x="1090" y="320" width="120" height="60" rx="2"
+          fill="url(#seaGrad)" opacity=".4"
+          style="mask: url(#waveMask)"/>
+
+    <!-- Mer -->
+    <path d="M0 310 Q180 280 360 305 Q540 328 720 295 Q900 262 1080 290 Q1260 318 1440 285 L1440 520 L0 520Z"
+          fill="url(#seaGrad)"/>
+    <!-- Vagues surface -->
+    <path d="M0 320 Q120 308 240 318 Q360 328 480 312 Q600 296 720 310 Q840 324 960 308 Q1080 292 1200 305 Q1320 318 1440 295"
+          fill="none" stroke="rgba(100,200,240,.25)" stroke-width="1.5"/>
+    <path d="M0 335 Q150 322 300 334 Q450 346 600 328 Q750 310 900 326 Q1050 342 1200 322 Q1320 308 1440 318"
+          fill="none" stroke="rgba(100,200,240,.15)" stroke-width="1"/>
+
+    <!-- Falaises gauche (massif de Collo avec végétation) -->
+    <path d="M0 520 L0 260 Q30 220 60 240 Q90 215 120 235 Q155 205 190 225 Q225 195 260 218 Q295 188 330 210 Q365 180 400 205 L420 310 Q380 295 340 310 Q300 325 260 308 Q220 291 180 310 Q140 329 100 315 Q60 301 0 320 Z"
+          fill="#1a4a2a"/>
+    <!-- Ombre falaise gauche -->
+    <path d="M0 520 L0 290 Q50 270 100 280 L80 310 Q40 305 0 320 Z" fill="#0e2e18"/>
+    <!-- Pins sur falaise gauche -->
+    <polygon points="80,240 72,270 88,270" fill="#0d3520"/>
+    <polygon points="120,218 110,252 130,252" fill="#0d3520"/>
+    <polygon points="165,210 155,245 175,245" fill="#0d3520"/>
+    <polygon points="210,200 200,238 220,238" fill="#0d3520"/>
+    <polygon points="255,192 244,228 266,228" fill="#0d3520"/>
+
+    <!-- Montagne / relief central -->
+    <path d="M350 310 Q400 200 460 225 Q510 175 570 210 Q620 165 680 195 Q730 155 790 188 Q840 145 900 180 L920 310 Z"
+          fill="#153828"/>
+    <path d="M680 195 Q730 155 790 188 Q840 145 900 180 L890 310 L700 310 Z" fill="#102a1e"/>
+
+    <!-- Falaises droite -->
+    <path d="M1440 520 L1440 255 Q1400 225 1365 248 Q1330 218 1295 240 Q1260 208 1225 232 Q1190 198 1155 225 L1140 310 Q1190 295 1240 310 Q1290 325 1340 310 Q1390 295 1440 310 Z"
+          fill="#1a4a2a"/>
+    <!-- Pins droite -->
+    <polygon points="1360,238 1350,272 1370,272" fill="#0d3520"/>
+    <polygon points="1315,228 1305,262 1325,262" fill="#0d3520"/>
+    <polygon points="1270,218 1260,252 1280,252" fill="#0d3520"/>
+
+    <!-- Plage de sable au centre -->
+    <path d="M380 505 Q720 455 1060 505 L1440 520 L0 520 Z" fill="#c8a870" opacity=".5"/>
+
+    <!-- Yacht électrique silhouette -->
+    <g transform="translate(660, 285)">
+      <!-- Coque -->
+      <path d="M0 22 Q60 18 120 22 Q130 26 120 30 Q60 32 0 30 Z" fill="#f0f0ee" stroke="#ccccca" stroke-width=".6"/>
+      <!-- Superstructure -->
+      <rect x="20" y="12" width="72" height="12" rx="2" fill="#ebebea" stroke="#b8b8b4" stroke-width=".5"/>
+      <rect x="32" y="6" width="34" height="8" rx="1.5" fill="#e4e4e2"/>
+      <!-- Mât -->
+      <line x1="60" y1="-18" x2="60" y2="6" stroke="#8a8a88" stroke-width="1.2"/>
+      <!-- Voile principale -->
+      <path d="M60 -18 L36 6" fill="rgba(255,255,255,.8)"/>
+      <!-- Voile avant -->
+      <path d="M60 -18 L82 6" fill="rgba(255,255,255,.55)"/>
+      <!-- Panneaux solaires -->
+      <rect x="24" y="13" width="28" height="5" rx="1" fill="rgba(30,80,200,.4)" stroke="rgba(30,80,200,.6)" stroke-width=".5"/>
+      <!-- Reflet sur l'eau -->
+      <ellipse cx="60" cy="36" rx="55" ry="5" fill="rgba(240,240,238,.12)"/>
+    </g>
+
+    <!-- Étoiles discrètes dans le ciel -->
+    <circle cx="200" cy="80" r="1" fill="rgba(255,255,255,.6)"/>
+    <circle cx="350" cy="55" r="1.2" fill="rgba(255,255,255,.5)"/>
+    <circle cx="520" cy="70" r="1" fill="rgba(255,255,255,.4)"/>
+    <circle cx="680" cy="45" r="1.5" fill="rgba(255,255,255,.6)"/>
+    <circle cx="820" cy="65" r="1" fill="rgba(255,255,255,.4)"/>
+    <circle cx="950" cy="50" r="1.2" fill="rgba(255,255,255,.5)"/>
+  </svg>
+
+  <div class="header-overlay"></div>
+
+  <div class="header-content">
+    <div class="header-eyelet">Skikda · Algérie · Méditerranée</div>
+    <h1>
+      KLM Croisières Méditerranée
+      <span class="ar">رحلات ك.لا.م للرحلات البحرية في البحر المتوسط</span>
+    </h1>
+    <h2>
+      L'Algérie vue de la mer.
+      <span class="ar">الجزائر كما لم تشاهدها من قبل — من البحر.</span>
+    </h2>
+    <div class="header-gold-line"></div>
+  </div>
+</header>
+
+<!-- ══ BANDE STATS ══ -->
+<div class="stats-band">
+  <div class="stat-item">
+    <div class="stat-n">140 km</div>
+    <div class="stat-l">de côtes à Skikda</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">3 000 ans</div>
+    <div class="stat-l">d'histoire maritime</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">4 sites</div>
+    <div class="stat-l">UNESCO sur la route</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">100%</div>
+    <div class="stat-l">énergie propre à bord</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-n">1er</div>
+    <div class="stat-l">opérateur nautique Algérie Est</div>
+  </div>
+</div>
+
+<!-- ══ INTRODUCTION ══ -->
+<section id="introduction">
+  <div class="wrap">
+    <div class="sec-eyelet">Notre promesse</div>
+    <div class="sec-h2" style="text-align:center">
+      Évadez-vous autrement, par la mer.
+    </div>
+
+    <!-- Illustration côte algérienne -->
+    <div class="coast-illustration">
+      <svg viewBox="0 0 900 220" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%;height:auto">
+        <defs>
+          <linearGradient id="introSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#B8D4E8"/>
+            <stop offset="55%" stop-color="#7FC0E0"/>
+            <stop offset="100%" stop-color="#4AADE0"/>
+          </linearGradient>
+          <linearGradient id="introSea" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#3AADE0"/>
+            <stop offset="100%" stop-color="#1A6A9A"/>
+          </linearGradient>
+        </defs>
+        <!-- Ciel -->
+        <rect width="900" height="220" fill="url(#introSky)"/>
+        <!-- Soleil après-midi -->
+        <circle cx="700" cy="55" r="36" fill="#FFD060" opacity=".85"/>
+        <circle cx="700" cy="55" r="26" fill="#FFE090" opacity=".9"/>
+        <ellipse cx="700" cy="55" rx="70" ry="50" fill="#FFB030" opacity=".2"/>
+        <!-- Nuages -->
+        <ellipse cx="180" cy="45" rx="55" ry="16" fill="rgba(255,255,255,.6)"/>
+        <ellipse cx="210" cy="38" rx="40" ry="14" fill="rgba(255,255,255,.7)"/>
+        <ellipse cx="420" cy="60" rx="45" ry="12" fill="rgba(255,255,255,.5)"/>
+        <ellipse cx="450" cy="54" rx="32" ry="11" fill="rgba(255,255,255,.6)"/>
+        <!-- Mer turquoise (dégradé) -->
+        <path d="M0 140 Q112 118 225 132 Q337 146 450 120 Q562 94 675 115 Q787 136 900 108 L900 220 L0 220Z" fill="#60C8F0"/>
+        <path d="M0 155 Q112 132 225 148 Q337 164 450 138 Q562 112 675 130 Q787 150 900 125 L900 220 L0 220Z" fill="url(#introSea)"/>
+        <!-- Reflets lumineux -->
+        <ellipse cx="250" cy="158" rx="40" ry="5" fill="rgba(255,255,255,.25)"/>
+        <ellipse cx="550" cy="145" rx="32" ry="4" fill="rgba(255,255,255,.2)"/>
+        <ellipse cx="750" cy="138" rx="25" ry="3" fill="rgba(255,255,255,.18)"/>
+        <!-- Falaises gauche avec végétation verte -->
+        <path d="M0 220 L0 90 Q25 65 50 82 Q80 52 115 72 Q148 44 185 66 Q220 38 255 60 L270 140 Q220 125 170 140 Q120 155 70 140 Q35 128 0 138Z" fill="#2A6A3A"/>
+        <path d="M0 220 L0 110 Q30 92 60 100 Q40 130 0 138Z" fill="#1A4A28"/>
+        <!-- Pins stylisés gauche -->
+        <polygon points="55,82 47,110 63,110" fill="#174020"/>
+        <polygon points="100,65 90,96 110,96" fill="#174020"/>
+        <polygon points="145,55 134,88 156,88" fill="#174020"/>
+        <polygon points="195,48 183,82 207,82" fill="#174020"/>
+        <!-- Falaises droite -->
+        <path d="M900 220 L900 95 Q875 68 848 88 Q820 55 792 76 Q764 44 736 67 Q708 38 680 60 L665 140 Q710 124 758 140 Q806 156 852 140 Q878 128 900 136Z" fill="#2A6A3A"/>
+        <!-- Plage centrale sable -->
+        <path d="M250 200 Q450 175 650 200 L900 220 L0 220Z" fill="#D4B878" opacity=".6"/>
+        <!-- Rochers émergents -->
+        <ellipse cx="350" cy="150" rx="12" ry="7" fill="#3A5A2A"/>
+        <ellipse cx="580" cy="140" rx="10" ry="6" fill="#3A5A2A"/>
+        <!-- Yacht KLM -->
+        <g transform="translate(410,120)">
+          <path d="M0 16 Q50 13 100 16 Q108 19 100 22 Q50 24 0 22Z" fill="#f0f0ee" stroke="#ccc" stroke-width=".5"/>
+          <rect x="15" y="8" width="62" height="10" rx="2" fill="#ebebea"/>
+          <rect x="26" y="3" width="28" height="7" rx="1.5" fill="#e4e4e2"/>
+          <line x1="50" y1="-14" x2="50" y2="3" stroke="#999" stroke-width="1"/>
+          <path d="M50 -14 L28 3" fill="rgba(255,255,255,.85)"/>
+          <path d="M50 -14 L70 3" fill="rgba(255,255,255,.6)"/>
+          <rect x="18" y="9" width="22" height="4" rx="1" fill="rgba(30,80,200,.4)"/>
+        </g>
+        <!-- Oiseaux de mer -->
+        <path d="M320 72 Q325 68 330 72" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M340 65 Q346 61 352 65" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M560 80 Q565 76 570 80" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.2" stroke-linecap="round"/>
+        <!-- Dauphin discret -->
+        <path d="M590 155 Q600 148 612 155 Q608 158 600 160 Q594 158 590 155Z" fill="rgba(60,140,200,.5)"/>
+      </svg>
+    </div>
+
+    <p class="sec-lead">
+      KLM Croisières Méditerranée propose des <strong>expériences nautiques élégantes et mémorables</strong> au départ de Skikda et du littoral algérien. Nos sorties en mer, sunset cruises et mini-croisières sont conçues pour redonner goût à la simplicité — profiter de l'air marin, se laisser bercer par le bruit de l'eau, redécouvrir l'Algérie autrement.
+    </p>
+    <p class="sec-lead">
+      À bord de yachts modernes, silencieux et propulsés par des <strong>énergies renouvelables</strong> (projet Sea Expandary), chaque sortie est une parenthèse de calme, de détente et d'authenticité — entre le standard et le haut de gamme, accessible à toute la famille.
+    </p>
+    <p class="arabic-note">تقدم رحلات ك.لا.م للرحلات البحرية في البحر المتوسط تجارب بحرية راقية من سكيكدة. زوارق هادئة وصديقة للبيئة، تجربة أصيلة على ساحل جزائري لا مثيل له.</p>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-eyelet">Nos formules</div>
+    <div class="sec-h2">Des expériences pour chaque envie.</div>
+    <p class="sec-lead">De la balade d'1h30 au coucher du soleil à la mini-croisière de plusieurs jours le long de la côte romaine — KLM Croisières s'adapte à vos envies, à votre famille, à votre groupe.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#0d4060,#1a8fba)">
+          <span class="service-icon">🌅</span>
+          <span class="service-cat">4 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Le Coucher du Cap — Sunset cruise</div>
+          <div class="service-text">Départ 18h, retour 22h. La lumière dorée sur les falaises du Cap de Fer. Apéritif à bord, musique douce, silence de la mer. Pour la première fois, vous voyez Skikda depuis le large.</div>
+          <div class="service-ar">جولة غروب الشمس — من 18:00 إلى 22:00</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#1a4a2e,#2a8050)">
+          <span class="service-icon">🏊</span>
+          <span class="service-cat">8 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Les Criques de Stora — Journée nature</div>
+          <div class="service-text">Stora, Ain Zouit, Baie des Cocos. Des anses vierges accessibles uniquement par la mer. Snorkeling, déjeuner halal à bord, baignade. La vraie Algérie sauvage.</div>
+          <div class="service-ar">جولة يومية — الخلجان البرية الخفية في ستورا وعين زويت</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#2a1a4a,#6040a0)">
+          <span class="service-icon">🌙</span>
+          <span class="service-cat">24 heures</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">La Nuit en Méditerranée</div>
+          <div class="service-text">Ancrage au crépuscule dans une crique isolée. Dîner à bord, nuit sous les étoiles en mer Méditerranée, petit-déjeuner face à l'horizon. Une vie pour s'en souvenir.</div>
+          <div class="service-ar">ليلة في البحر المتوسط — مرساة في خليج وحيد تحت النجوم</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#3a0e0e,#903030)">
+          <span class="service-icon">🏛️</span>
+          <span class="service-cat">5 jours</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">La Côte Romaine ★ UNESCO</div>
+          <div class="service-text">Skikda → Annaba (Hippone, Saint Augustin) → Jijel → Béjaïa → Alger → Tipaza UNESCO. La grande croisière de la Méditerranée algérienne. Cabines, repas halal, excursions inclus.</div>
+          <div class="service-ar">رحلة الساحل الروماني — من سكيكدة إلى تيبازة اليونسكو</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#0e2a3a,#1a5a7a)">
+          <span class="service-icon">👨‍👩‍👧‍👦</span>
+          <span class="service-cat">Famille</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Mini-croisière familiale</div>
+          <div class="service-text">Sorties de demi-journée pensées pour les familles qui veulent quitter la ville, profiter du temps ensemble et offrir aux enfants une sortie différente. Accessible, confortable, halal.</div>
+          <div class="service-ar">رحلة عائلية — نصف يوم مع العائلة على البحر الجميل</div>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-head" style="background:linear-gradient(135deg,#1a3a0e,#4a8020)">
+          <span class="service-icon">🏢</span>
+          <span class="service-cat">Corporate</span>
+        </div>
+        <div class="service-body">
+          <div class="service-name">Privatisation & Événements</div>
+          <div class="service-text">Anniversaire, mariage, séminaire de direction. Le yacht entier privatisé pour votre groupe (6 à 12 personnes). Traiteur halal sur demande. Un événement que personne n'oublie.</div>
+          <div class="service-ar">تأجير اليخت — حفلات، ذكرى سنوية، تكوين الفرق المهنية</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ TERRITOIRE CÔTE EST ══ -->
+<section id="territoire">
+  <div class="wrap">
+    <div class="sec-eyelet">Le territoire</div>
+    <div class="sec-h2">De Tipaza à la frontière tunisienne —<br>la Méditerranée telle qu'elle était.</div>
+    <p class="sec-lead">La côte Est algérienne est l'une des façades maritimes les plus préservées du bassin méditerranéen. Criques vierges, grottes marines, ruines antiques en bord d'eau, dauphins et posidonie — tout cela n'existe que pour celui qui arrive <strong>par la mer</strong>.</p>
+
+    <div class="coast-grid">
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#071e3d,#1a6a9a)">
+          <span class="coast-badge">Skikda · Base KLM</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <path d="M0 100 L0 40 Q30 20 60 35 Q90 12 120 30 Q150 8 180 28 Q200 18 220 30 L220 100Z" fill="rgba(26,106,50,.7)"/>
+            <path d="M0 100 Q55 70 110 82 Q165 94 220 68 L220 100Z" fill="rgba(26,143,186,.5)"/>
+            <ellipse cx="130" cy="78" rx="18" ry="3" fill="rgba(255,255,255,.2)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Skikda · Stora · Tamanar</div>
+          <div class="coast-text">140 km de côtes. La plage de Tamanar — 700 m de sable vierge entre des falaises de 200 m. Les criques de Stora, Ain Zouit, Cap Bougaroun. La Perle de l'Est.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#0e3a20,#2a7a50)">
+          <span class="coast-badge">Béjaïa · Jijel</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <path d="M0 100 L0 35 Q40 10 80 28 Q115 5 150 22 Q185 0 220 18 L220 100Z" fill="rgba(10,40,20,.6)"/>
+            <path d="M0 100 Q55 72 110 85 Q165 98 220 65 L220 100Z" fill="rgba(60,180,100,.3)"/>
+            <circle cx="160" cy="32" r="8" fill="rgba(255,180,30,.5)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Parc Gouraya · Grottes de Jijel</div>
+          <div class="coast-text">4 espèces de mammifères marins protégés (dauphins, cachalots). Grottes marines ocre de Jijel. Herbiers de posidonie. Réserve de biosphère UNESCO 2014.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#2a1a0a,#8a5020)">
+          <span class="coast-badge">Annaba · Hippone</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <!-- Colonnes romaines stylisées -->
+            <rect x="40" y="20" width="6" height="55" rx="1" fill="rgba(220,180,80,.7)"/>
+            <rect x="40" y="18" width="10" height="5" rx="1" fill="rgba(200,160,60,.8)"/>
+            <rect x="70" y="12" width="6" height="63" rx="1" fill="rgba(220,180,80,.7)"/>
+            <rect x="70" y="10" width="10" height="5" rx="1" fill="rgba(200,160,60,.8)"/>
+            <rect x="100" y="18" width="6" height="57" rx="1" fill="rgba(200,160,60,.6)"/>
+            <rect x="100" y="16" width="10" height="5" rx="1" fill="rgba(180,140,50,.7)"/>
+            <path d="M30 75 L130 75" stroke="rgba(200,160,60,.5)" stroke-width="2"/>
+            <path d="M0 100 Q55 80 110 90 Q165 100 220 75 L220 100Z" fill="rgba(26,143,186,.4)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Hippone · Monts Edough</div>
+          <div class="coast-text">Forum romain parmi les plus grands d'Afrique du Nord. Basilique Saint-Augustin. Les monts Edough (70 km) en cours de classement réserve naturelle.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#1a0a2a,#4a2080)">
+          <span class="coast-badge">Tipaza · UNESCO</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <rect x="30" y="25" width="5" height="50" rx="1" fill="rgba(200,180,255,.6)"/>
+            <rect x="50" y="15" width="5" height="60" rx="1" fill="rgba(200,180,255,.6)"/>
+            <rect x="70" y="20" width="5" height="55" rx="1" fill="rgba(200,180,255,.5)"/>
+            <path d="M80 22 Q90 12 100 22" fill="none" stroke="rgba(200,180,255,.5)" stroke-width="2"/>
+            <rect x="80" y="22" width="3" height="53" rx="1" fill="rgba(200,180,255,.5)"/>
+            <rect x="97" y="22" width="3" height="53" rx="1" fill="rgba(200,180,255,.5)"/>
+            <path d="M0 100 Q55 68 110 82 Q165 96 220 62 L220 100Z" fill="rgba(26,143,186,.5)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Tipaza · Site UNESCO</div>
+          <div class="coast-text">Colonnes romaines qui trempent dans la Méditerranée depuis 2 000 ans. Comptoir punique du Ve s. av. J.-C. Basilique, forum, amphithéâtre en bord de mer.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#0a2a20,#1a6a50)">
+          <span class="coast-badge">El Kala · UNESCO</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <!-- Oiseaux et lagune -->
+            <path d="M60 35 Q67 30 74 35" fill="none" stroke="rgba(255,255,255,.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M100 25 Q107 20 114 25" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M140 38 Q147 33 154 38" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M0 100 L0 55 Q55 40 110 55 Q165 70 220 45 L220 100Z" fill="rgba(30,100,70,.6)"/>
+            <path d="M0 100 Q55 78 110 88 Q165 98 220 72 L220 100Z" fill="rgba(20,160,100,.3)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">El Kala · Réserve biosphère</div>
+          <div class="coast-text">76 000 ha de lagunes, dunes et forêts. Réserve de biosphère UNESCO. Sanctuaire ornithologique unique en Algérie. Frontière tunisienne.</div>
+        </div>
+      </div>
+
+      <div class="coast-card">
+        <div class="coast-head" style="background:linear-gradient(160deg,#1a1a0a,#6a5a20)">
+          <span class="coast-badge">Gastronomie</span>
+          <svg viewBox="0 0 220 100" style="position:absolute;bottom:0;left:0;width:100%;height:100%">
+            <circle cx="110" cy="45" r="25" fill="rgba(255,200,80,.2)" stroke="rgba(255,200,80,.4)" stroke-width="1.5"/>
+            <path d="M98 45 Q110 38 122 45 Q116 50 110 52 Q104 50 98 45Z" fill="rgba(255,200,80,.6)"/>
+            <path d="M0 100 Q55 72 110 85 Q165 98 220 68 L220 100Z" fill="rgba(26,143,186,.4)"/>
+          </svg>
+        </div>
+        <div class="coast-body">
+          <div class="coast-name">Cuisine de la mer · Halal</div>
+          <div class="coast-text">Couscous de poisson avec les prises du matin, oursins, langouste de Collo, sardines grillées. Repas préparé à bord avec les produits frais de la mer locale.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONFIANCE & SÉCURITÉ ══ -->
+<section id="confidence">
+  <div class="wrap">
+    <div class="sec-eyelet">Notre engagement</div>
+    <div class="sec-h2">Sécurité, confort et technologie.</div>
+    <p class="sec-lead">Chaque sortie KLM Croisières est encadrée par des standards de sécurité stricts, à bord de yachts modernes propulsés par des technologies propres, avec un équipage chaleureux et à l'écoute.</p>
+
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="trust-icon">⚡</div>
+        <div class="trust-title">Énergie propre · Sea Expandary</div>
+        <div class="trust-text">Propulsion hybride et électrique. Énergie solaire et éolienne. Zéro émission côtière. Navigation silencieuse, zéro vibration. Partenariat Sea Expandary (Shenzhen, 700 M$).</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div class="trust-title">Sécurité certifiée</div>
+        <div class="trust-text">Bateaux régulièrement entretenus et conformes aux normes maritimes. Gilets de sauvetage, matériel de secours, équipage formé. Votre sécurité est notre priorité absolue.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🤖</div>
+        <div class="trust-title">Intelligence artificielle à bord</div>
+        <div class="trust-text">Navigation assistée par IA pour une gestion optimale de la route, de la météo et de la consommation. Plus de confort, plus de fluidité, plus de sérénité pour vous.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🍽️</div>
+        <div class="trust-title">100% Halal à bord</div>
+        <div class="trust-text">Tous nos repas et boissons sont certifiés halal. Cuisine préparée avec les produits frais du littoral algérien. Menus personnalisables selon les régimes alimentaires.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">👨‍✈️</div>
+        <div class="trust-title">Équipage expérimenté</div>
+        <div class="trust-text">Capitaine et membres d'équipage formés et passionnés. Accueil chaleureux, disponibilité totale, service attentionné pour toute la famille.</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🌿</div>
+        <div class="trust-title">Respect de l'environnement</div>
+        <div class="trust-text">Engagement fort pour la préservation du littoral algérien. Aucun rejet en mer, matériaux écoresponsables, sensibilisation à la faune marine à bord.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ITINÉRAIRES ══ -->
+<section id="itineraires">
+  <div class="wrap">
+    <div class="sec-eyelet">Nos itinéraires</div>
+    <div class="sec-h2">Quatre façons de vivre la côte Est algérienne.</div>
+
+    <div class="iti-list">
+      <div class="iti-item">
+        <div class="iti-code" style="background:var(--teal)">KLM<br>1</div>
+        <div class="iti-info">
+          <div class="iti-name">Les Criques de Skikda · Sunset</div>
+          <div class="iti-stops">Skikda · Stora · Ain Zouit · Baie des Cocos · Cap de Fer · Chetaïbi</div>
+        </div>
+        <div>
+          <div class="iti-price">5 000–8 000 DA</div>
+          <div class="iti-duration">4 à 8 heures</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:#1B6A3E">KLM<br>2</div>
+        <div class="iti-info">
+          <div class="iti-name">La Côte Romaine ★ UNESCO</div>
+          <div class="iti-stops">Skikda · Annaba (Hippone) · Jijel · Béjaïa · Alger · Tipaza</div>
+        </div>
+        <div>
+          <div class="iti-price">550–750 €</div>
+          <div class="iti-duration">5 jours · 4 nuits</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:#7F77DD">KLM<br>3</div>
+        <div class="iti-info">
+          <div class="iti-name">Andalousie & Retour</div>
+          <div class="iti-stops">Alger · Alicante · Valence · Barcelone</div>
+        </div>
+        <div>
+          <div class="iti-price">Sur devis</div>
+          <div class="iti-duration">8 jours</div>
+        </div>
+      </div>
+      <div class="iti-item">
+        <div class="iti-code" style="background:var(--gold)">KLM<br>4</div>
+        <div class="iti-info">
+          <div class="iti-name">Méditerranée Latine · Boucle</div>
+          <div class="iti-stops">Skikda · Marseille · Ramatuelle · Nice · Ajaccio · Sardaigne · Skikda</div>
+        </div>
+        <div>
+          <div class="iti-price">1 200–1 800 €</div>
+          <div class="iti-duration">10 jours · boucle</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA RÉSERVATION ══ -->
+<section id="cta">
+  <div class="cta-eyelet">Réservez votre expérience</div>
+  <div class="cta-h3">Votre prochaine sortie en mer commence ici.</div>
+  <div class="cta-sub">Contactez-nous par le canal de votre choix. Réponse en moins de 2 heures.</div>
+  <div class="cta-gold-line"></div>
+
+  <div class="contact-cards">
+
+    <!-- Téléphone cliquable -->
+    <a href="tel:+213555276913" class="contact-card" title="Appeler KLM Croisières">
+      <span class="contact-card-icon">📞</span>
+      <div class="contact-card-label">Téléphone / هاتف</div>
+      <div class="contact-card-value">+213 (0)5 55 27 69 13</div>
+      <div class="contact-card-sub">Appel direct</div>
+    </a>
+
+    <!-- WhatsApp cliquable -->
+    <a href="https://wa.me/213555276913?text=Bonjour%20KLM%20Croisi%C3%A8res%2C%20je%20souhaite%20r%C3%A9server%20une%20sortie%20en%20mer%20depuis%20Skikda." target="_blank" rel="noopener" class="contact-card" title="WhatsApp KLM Croisières">
+      <span class="contact-card-icon">💬</span>
+      <div class="contact-card-label">WhatsApp / واتساب</div>
+      <div class="contact-card-value">Écrire sur WhatsApp</div>
+      <div class="contact-card-sub">+213 (0)5 55 27 69 13</div>
+    </a>
+
+    <!-- Email cliquable -->
+    <a href="mailto:kimcroisieres@gmail.com?subject=Réservation%20KLM%20Croisières&body=Bonjour%2C%20je%20souhaite%20réserver%20une%20sortie%20en%20mer.%0A%0ANom%20:%0ADate%20souhaitée%20:%0ANombre%20de%20personnes%20:%0AFormule%20choisie%20:%0A%0AMerci." class="contact-card" title="Email KLM Croisières">
+      <span class="contact-card-icon">✉️</span>
+      <div class="contact-card-label">Email / البريد</div>
+      <div class="contact-card-value">kimcroisieres@gmail.com</div>
+      <div class="contact-card-sub">Réponse sous 2h</div>
+    </a>
+
+    <!-- Formulaire de contact intégré -->
+    <a href="#contact-form" class="contact-card" title="Formulaire de contact" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'});return false;">
+      <span class="contact-card-icon">📋</span>
+      <div class="contact-card-label">Formulaire / نموذج</div>
+      <div class="contact-card-value">Formulaire de contact</div>
+      <div class="contact-card-sub">Remplir en ligne</div>
+    </a>
+
+  </div>
+
+  <p class="cta-note">رحلات ك.لا.م للرحلات البحرية في البحر المتوسط — هرب إلى البحر، واعثر على الهدوء، والراحة، واكتشاف ثقافي.</p>
+</section>
+
+<!-- ══ FORMULAIRE DE CONTACT ══ -->
+<section id="contact-form" style="background:var(--sand)">
+  <div class="wrap">
+    <div class="sec-eyelet">Formulaire de réservation</div>
+    <div class="sec-h2">Réservez votre sortie en mer.</div>
+    <p class="sec-lead">Remplissez ce formulaire et nous vous répondons dans les 2 heures. Toutes les sorties sont personnalisables selon vos envies et votre groupe.</p>
+
+    <form id="reservation-form" style="max-width:600px"
+          onsubmit="handleSubmit(event)">
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Nom complet *</label>
+          <input type="text" name="nom" required placeholder="Votre nom et prénom"
+                 style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Téléphone *</label>
+          <input type="tel" name="telephone" required placeholder="+213 ..."
+                 style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+                 onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Email</label>
+        <input type="email" name="email" placeholder="votre@email.com"
+               style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+               onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Formule souhaitée *</label>
+          <select name="formule" required
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;appearance:none;cursor:pointer">
+            <option value="">Choisir une formule</option>
+            <option>Le Coucher du Cap (4h sunset)</option>
+            <option>Les Criques de Stora (journée)</option>
+            <option>La Nuit en Méditerranée (24h)</option>
+            <option>Mini-croisière familiale</option>
+            <option>La Côte Romaine ★ (5 jours)</option>
+            <option>Privatisation · Événement</option>
+            <option>Autre / Sur mesure</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Nombre de personnes *</label>
+          <select name="personnes" required
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;appearance:none;cursor:pointer">
+            <option value="">Combien de personnes ?</option>
+            <option>1 – 2 personnes</option>
+            <option>3 – 4 personnes</option>
+            <option>5 – 6 personnes</option>
+            <option>7 – 10 personnes</option>
+            <option>11 – 12 personnes (max)</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-bottom:16px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Date souhaitée</label>
+        <input type="date" name="date"
+               style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;transition:border-color .2s"
+               onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'">
+      </div>
+
+      <div style="margin-bottom:24px">
+        <label style="font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:6px">Message / demande particulière</label>
+        <textarea name="message" rows="4" placeholder="Régimes alimentaires, accessibilité, occasion spéciale, questions..."
+                  style="width:100%;padding:12px 14px;border:1.5px solid rgba(7,30,61,.15);border-radius:8px;font-size:14px;font-family:var(--sans);background:var(--white);color:var(--ink);outline:none;resize:vertical;transition:border-color .2s"
+                  onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='rgba(7,30,61,.15)'"></textarea>
+      </div>
+
+      <button type="submit"
+              style="width:100%;padding:16px;background:var(--navy);color:var(--white);border:none;border-radius:10px;font-size:16px;font-weight:700;font-family:var(--sans);letter-spacing:.04em;cursor:pointer;transition:background .2s,transform .2s"
+              onmouseover="this.style.background='var(--teal)'" onmouseout="this.style.background='var(--navy)'"
+              onmousedown="this.style.transform='scale(.98)'" onmouseup="this.style.transform='scale(1)'">
+        Envoyer ma demande de réservation
+      </button>
+
+      <div id="form-success" style="display:none;margin-top:16px;padding:16px;background:rgba(27,122,74,.1);border:1.5px solid var(--teal);border-radius:8px;text-align:center;font-size:14px;color:#1B7A4A;font-weight:700">
+        ✅ Merci ! Votre demande a été envoyée. Nous vous contactons dans les 2 heures via WhatsApp ou téléphone.
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer id="page-footer">
+  <div class="footer-brand">KLM Croisières Méditerranée</div>
+  <div class="footer-slogan">L'Algérie vue de la mer.</div>
+  <div class="footer-links">
+    <a href="#introduction">Présentation</a>
+    <a href="#services">Formules</a>
+    <a href="#territoire">Le territoire</a>
+    <a href="#itineraires">Itinéraires</a>
+    <a href="#contact-form">Réserver</a>
+    <a href="tel:+213555276913">+213 (0)5 55 27 69 13</a>
+    <a href="mailto:kimcroisieres@gmail.com">kimcroisieres@gmail.com</a>
+  </div>
+  <div class="footer-copy">© 2026 SARL KLM Croisières Méditerranée · Skikda, Algérie · Tous droits réservés / جميع الحقوق محفوظة</div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const nom = data.get('nom');
+  const tel = data.get('telephone');
+  const formule = data.get('formule');
+  const personnes = data.get('personnes');
+  const date = data.get('date');
+  const msg = data.get('message');
+
+  // Construire le message WhatsApp
+  const waText = encodeURIComponent(
+    `Bonjour KLM Croisières 🌊\n\n` +
+    `📋 DEMANDE DE RÉSERVATION\n` +
+    `Nom : ${nom}\n` +
+    `Téléphone : ${tel}\n` +
+    `Formule : ${formule}\n` +
+    `Personnes : ${personnes}\n` +
+    `Date souhaitée : ${date || 'À définir'}\n` +
+    `Message : ${msg || 'Aucun'}\n\n` +
+    `Merci de me recontacter rapidement. 🚢`
+  );
+
+  // Ouvrir WhatsApp avec le message pré-rempli
+  window.open(`https://wa.me/213555276913?text=${waText}`, '_blank');
+
+  // Afficher le message de succès
+  document.getElementById('form-success').style.display = 'block';
+  form.reset();
+
+  // Scroll vers le message de succès
+  setTimeout(() => {
+    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, 200);
+}
+</script>
+
+</body>
+</html>
